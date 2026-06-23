@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Fuku - Product</title>
+        <link rel = "stylesheet" href = "styel.css">
+    </head>
+
+<body>
+    <!--Header-->
+    <header>
+        <h1>Fuku</h1>
+        <nav>
+           <a href = "index.html">Home</a>
+            <a href = "product.html">Product</a>
+            <a href = "login.html">Login</a>
+            <a href = "register.html">Register</a>
+            <a href = "reviews.html">Reviews</a>
+            <a href = "team.html">Team</a>
+            <a href = "portfolio-derrick.html">Derrick</a>
+            <a href = "portfolio-gilbert.html">Gilbert</a>
+            <a href = "portfolio-jack.html">Jack</a>
+            <a href = "portfolio-rachael.html">Rachael</a>
+        </nav>
+    </header>
+
+<!--Product Title-->
+<section>
+    <h2>Our Collection</h2>
+    <p>Look good, Feel good!</p>
+</section>
+
+<!--Search Bar-->
+<section>
+    <input type = "text" placeholder = "Search clothing..."> <!--input: creates an input field for user, type = "text": specifies that this input accepts text from user, placeholder: displays a hint insdie the box before user types anything (when user clicks and starts typing inside, the placeholder disappears.)-->
+    <button>Search</button>
+</section>
+<br>
+<!--Filter-->
+<section>
+    <label>Catergory<!--describe an input field so user know what should they enter, improves accessibility, clicable--></label>
+
+    <select><!--creates a drop-down list where users can choose one option from many choices-->
+        <option>All</option> <!--<option> : inside <select> dropdown to define each choice a user can choose from-->
+        <option>Men</option>
+        <option>Women</option>
+        <option>Best-Seller</option>
+    </select>
+
+    <label>Sort by</label>
+
+    <select>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+    </select>
+
+</section>
+</br>
+
+<!--Products-->
+<section>
+    
+    <div id = "productContainer">
+
+        <div class = "product" data-category = "men" data-price = "89.90">
+            <img src = "images/denimjacket.jpg"
+            alt = "Denim Jacket"
+            width = "200"
+            height = "200">
+
+        <h3>Denim Jacket</h3>
+        <p>RM89.90</p>
+    </div>
+
+    <div class="product" data-category="men" data-price="79.90">
+        <img src="images/jeans.jpg" 
+        alt="Classic Jeans" 
+        width="200"
+        height = "200">
+
+        <h3>Classic Jeans</h3>
+        <p>RM79.90</p>
+    </div>
+
+    <div class="product" data-category="men" data-price="59.90">
+        <img src="images/cargopants.jpg" 
+        alt="Cargo Pants" 
+        width="200"
+        height = "200">>
+
+        <h3>Cargo Pants</h3>
+        <p>RM59.90</p>
+    </div>
+
+    <div class="product" data-category="men" data-price="89.90">
+        <img src="images/hoodie.jpg" 
+        alt="Go-to Hoodie" 
+        width="200"
+        height = "200">
+
+        <h3>Go-to Hoodie</h3>
+        <p>RM89.90</p>
+    </div>
+    
+    <div class="product" data-category="women" data-price="59.90">
+        <img src="images/dress.jpg" 
+        alt="Vintage Floral Ruffle Dress" 
+        width="200"
+        height = "200">
+
+        <h3>Vintage Floral Ruffle Dress</h3>
+        <p>RM59.90</p>
+    </div>
+
+    <div class="product" data-category="women" data-price="59.90">
+        <img src="images/tops.jpg" 
+        alt="Graphic Baby Tee" 
+        width="200"
+        height = "200">
+
+        <h3>Graphic Baby Tee</h3>
+        <p>RM59.90</p>
+        </div>
+        
+    <div class="product" data-category="women" data-price="39.90">
+        <img src="images/skirt.jpg" 
+        alt="Tennis Skirt" 
+        width="200"
+        height = "200">
+
+        <h3>Tennis Skirt</h3>
+        <p>RM39.90</p>
+    </div>
+
+    <div class="product" data-category="women" data-price="59.90">
+        <img src="images/cardigan.jpg" 
+        alt="Knitted Cardigan"
+         width="200"
+        height = "200">
+
+        <h3>Knitted Cardigan</h3>
+        <p>RM59.90</p>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <small>
+    &copy; 2026 Forever 18. All Rights Reserved.
+    </small>
+</footer>
+
+</body>
+</html>
