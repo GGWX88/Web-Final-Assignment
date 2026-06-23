@@ -32,8 +32,8 @@ nav {
 
 nav a {
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;    
-  letter-spacing: 3px;      
+  text-transform: uppercase;
+  letter-spacing: 3px;
   color: #4a3b28;
   text-decoration: none;
   margin: 0 18px;
@@ -50,14 +50,30 @@ nav a.active {
   padding-bottom: 4px;
 }
 
-/* Main content */
-main {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 24px;
-  text-align: center;
+/* Hero */
+.hero {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/mv_1.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.hero h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Main content */
 main h1 {
   font-size: 36px;
   margin-bottom: 12px;
@@ -67,4 +83,31 @@ main h1 {
 main p {
   font-size: 18px;
   color: #666;
+}
+
+/* Shop button */
+.shop-button {
+  display: inline-block;
+  background: #4a3b28;
+  color: #f5efe6;
+  padding: 14px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-top: 24px;
+  border-radius: 4px;
+}
+
+.shop-button:hover {
+  background: #3a2d1e;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #999;
+  font-size: 14px;
+  border-top: 1px solid #eee;
 }
