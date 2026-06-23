@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Review — Noru</title>
+  <title>Review — Fuku</title>
   <link rel="stylesheet" href="../stylesheet/style.css">
 </head>
 <body>
-  <section>
-    <div class="logo">Noru</div>
+  <header>
+    <div class="logo">Fuku</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="catalogue.html">Catalogue</a>
@@ -15,6 +15,96 @@
       <a href="review.html" class="active">Review</a>
       <a href="register.html">Register</a>
     </nav>
-  </section>
+  </header>
+
+  <main>
+    <div class="review-header">
+      <p class="review-eyebrow">What people say</p>
+      <h1>Customer Reviews</h1>
+      <p class="review-sub">Share your experience and read what other customers think. Reviews are saved in your browser and appear instantly.</p>
+    </div>
+ 
+    <div class="review-layout">
+      <!-- LEFT: write a review form -->
+      <div class="review-left">
+        <h2 class="col-title">Leave a review</h2>
+        <p class="form-msg" id="rv-msg"></p>
+        <div class="review-form" id="review-form">
+          <div class="form-row">
+            <div class="form-half">
+              <label for="rv-name">Name</label>
+              <input type="text" id="rv-name" placeholder="Your name">
+            </div>
+            <div class="form-half">
+              <label for="rv-email">Email</label>
+              <input type="email" id="rv-email" placeholder="Your email">
+            </div>
+          </div>
+          <div class="form-full">
+            <label for="rv-phone">Phone</label>
+            <input type="tel" id="rv-phone" placeholder="Your phone number">
+          </div>
+          <div class="star-input">
+            <label id="stars-label">Your rating</label>
+            <div class="pick-stars" id="star-picker">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+          </div>
+          <div class="form-full">
+            <label for="rv-text">Your review</label>
+            <textarea id="rv-text" maxlength="400" placeholder="Tell us about your experience..." rows="5"></textarea>
+            <span class="char-count" id="char-count">0 / 400</span>
+          </div>
+          <button id="rv-submit">Submit Review</button>
+        </div>
+      </div>
+ 
+      <!-- RIGHT: recent reviews -->
+      <div class="review-right">
+        <h2 class="col-title">Recent reviews</h2>
+        <div id="reviews-container"></div>
+        <p class="review-note">Note: the duplicate check (by email or phone) is a client-side demonstration of validation logic, not real identity verification.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  <div class="footer-top">
+    <div class="footer-column">
+      <h4>Shop</h4>
+      <a href="catalogue.html">Women</a>
+      <a href="catalogue.html">Men</a>
+    </div>
+    <div class="footer-column">
+      <h4>About</h4>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="footer-column">
+      <h4>Support</h4>
+      <a href="#">FAQs</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="footer-column">
+      <h4>Got a question?</h4>
+      <p>+6016-417-5751</p>
+      <p>fuku@gmail.com</p>
+    </div>
+    <div class="footer-column">
+      <h4>Get updates when you sign up.</h4>
+      <p>Receive the latest updates and more.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter your email">
+        <button>Submit</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Fuku. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
