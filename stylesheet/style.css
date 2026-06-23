@@ -11,7 +11,8 @@ body {
 }
 
 /* Nav bar */
-section {
+/*--changed from "section" to nav_bar--*/
+.nav_bar {
   background: #e8d3af;
   padding: 24px 48px;
   display: flex;
