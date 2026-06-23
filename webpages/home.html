@@ -4,9 +4,48 @@
   <meta charset="UTF-8">
   <title>Home — Noru</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    section {
+      background: #e8d3af;
+      padding: 24px 48px;        
+      display: flex;             
+      align-items: center;       
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #4a3b28;
+    }
+
+    nav {
+      flex: 1;                     
+      text-align: center;       
+    }
+
+    nav a {
+      color: #4a3b28;
+      text-decoration: none;
+      margin: 0 18px;            
+      font-size: 18px;            
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      border-bottom: 2px solid #4a3b28;  
+      padding-bottom: 4px;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
+  <section>
+    <div class="logo">Noru</div>
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="catalogue.html">Catalogue</a>
@@ -14,7 +53,7 @@
       <a href="review.html">Review</a>
       <a href="register.html">Register</a>
     </nav>
-  </header>
+  </section>
 
   <main>
     <h1>Welcome to Noru</h1>
