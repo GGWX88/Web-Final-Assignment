@@ -18,8 +18,8 @@
       padding: 1em;
     }
 .team {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      justify-content: center;
       gap: 2em;
       padding: 2em;
       max-width: 1200px;
@@ -27,7 +27,9 @@
 
     }
 
-    .team-details { background: white;
+    .team-details { 
+      background: white;
+      width: 250px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
@@ -42,7 +44,7 @@
 
     .team-details h3 {
       margin: 0.5em 0;
-      color: #2c3e50;
+      color: rgb(0, 0, 0);
     }
 
     .team-details p {
@@ -94,7 +96,7 @@
     </div>
 
     <div class="team-details">
-      <img src="images/member2.jpg" alt="Jack">
+      <img src="images/member2.jpeg" alt="Jack">
       <h3>Jack</h3>
       <p></p>
       <div class="Roles">
@@ -135,6 +137,6 @@
       </div>
     </div>
     </section>
-     <footer>&copy; 2026</footer>
+
 </body>
 </html>
