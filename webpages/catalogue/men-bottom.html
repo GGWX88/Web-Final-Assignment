@@ -1,0 +1,108 @@
+<style>
+/*page_menu*/
+	.page_menu {
+		height: 10vw;
+		background-color: blue;
+		a {
+			text-decoration: none;
+		}
+	}
+
+/*catalogue*/
+	.catalogue {
+		display: flex;
+		justify-content: center; /* Centers the cards inside the section */
+		flex-wrap: wrap;         /* Allows cards to wrap */
+	}
+
+/*card*/
+	.card {
+		width: 23vw;
+		padding-top: 2vw;
+		float: left;
+		display: flex;
+		flex-direction: column;
+	}
+	.card_img {
+		width: 90%;
+		object-fit: cover;
+		display: block;
+		margin: 0 auto;
+	}
+	.card_text {
+		padding-top: 1%;
+		padding-left: 6%;
+		font-size: 15;
+		font-family: 'Hanken Grotesk';
+	}
+	.card_price {
+		font-size: 13;
+		color: grey;
+	}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Catalogue — Noru</title>
+	<link rel="stylesheet" href="../../stylesheet/style.css">
+</head>
+<body>
+	<section class="nav_bar">
+		<div class="logo">Noru</div>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="catalogue.html" class="active">Catalogue</a>
+			<a href="about.html">About</a>
+			<a href="review.html">Review</a>
+			<a href="register.html">Register</a>
+		</nav>
+	</section>
+
+	<section>
+		<div class="page_menu">
+			<a href="index.html">Home</a>/Catalogue
+			<p>Men</p>
+		</div>
+	</section>
+
+	<div class="catalogue">
+		<div class="card">
+			<img class="card_img" src="./clothing-img-1.webp" alt="Foo. " title="">
+			<div class="card_text">
+			Blue Denim Jeans
+			<p class="card_price">RM 109.99</p>
+			</div>
+		</div>
+		<div class="card">
+			<img class="card_img" src="./clothing-img-1.webp" alt="Foo. " title="">
+			<div class="card_text">
+			Blue Denim Jeans
+			<p class="card_price">RM 109.99</p>
+			</div>
+		</div>
+		<div class="card">
+			<img class="card_img" src="./clothing-img-1.webp" alt="Foo. " title="">
+			<div class="card_text">
+			Blue Denim Jeans
+			<p class="card_price">RM 109.99</p>
+			</div>
+		</div>
+		<div class="card">
+			<img class="card_img" src="./clothing-img-1.webp" alt="Foo. " title="">
+			<div class="card_text">
+			Blue Denim Jeans
+			<p class="card_price">RM 109.99</p>
+			</div>
+		</div>
+		<div class="card">
+			<img class="card_img" src="./clothing-img-1.webp" alt="Foo. " title="">
+			<div class="card_text">
+			Blue Denim Jeans
+			<p class="card_price">RM 109.99</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
