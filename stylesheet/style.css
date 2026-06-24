@@ -1,3 +1,9 @@
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +17,7 @@ body {
 }
 
 /* Nav bar */
-section {
+header {
   background: #e8d3af;
   padding: 24px 48px;
   display: flex;
@@ -20,9 +26,12 @@ section {
 }
 
 .logo {
+  font-family: 'Montserrat', sans-serif;
   font-size: 26px;
-  font-weight: bold;
+  font-weight: 300;
+  letter-spacing: 8px;
   color: #4a3b28;
+  text-transform: uppercase;
 }
 
 nav {
@@ -32,8 +41,8 @@ nav {
 
 nav a {
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;    
-  letter-spacing: 3px;      
+  text-transform: uppercase;
+  letter-spacing: 3px;
   color: #4a3b28;
   text-decoration: none;
   margin: 0 18px;
@@ -50,21 +59,511 @@ nav a.active {
   padding-bottom: 4px;
 }
 
-/* Main content */
-main {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 24px;
+/* Hero */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-main h1 {
+.hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 36px;
+  color: #fff;
   margin-bottom: 12px;
+}
+
+.hero-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Shop button */
+.shop-button {
+  display: inline-block;
+  background: #4a3b28;
+  color: #f5efe6;
+  padding: 14px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-top: 24px;
+  border-radius: 4px;
+}
+
+.shop-button:hover {
+  background: #3a2d1e;
+}
+
+/* Category grid */
+.categories {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.category-card {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card img {
+  width: 100%;
+  height: 85vh;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: background 0.3s;
+}
+
+.category-card:hover .category-label {
+  background: rgba(0,0,0,0.5);
+}
+
+/* Featured products */
+.featured {
+  padding: 60px 48px;
+}
+
+.feat-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  color: #4a3b28;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.product-card .price {
+  font-size: 14px;
+  color: #888;
+}
+
+.product-card:hover img {
+  opacity: 0.85;
+}
+
+
+/* ===================== FOOTER ===================== */
+
+footer {
+  background: #e8d3af;
+  border-top: 1px solid #eee;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 48px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-column h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #4a3b28;
+  margin-bottom: 16px;
+}
+
+.footer-column a {
+  display: block;
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-column a:hover {
   color: #4a3b28;
 }
 
-main p {
-  font-size: 18px;
-  color: #666;
+.footer-column p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 8px;
 }
+
+.newsletter {
+  display: flex;
+  margin-top: 12px;
+}
+
+.newsletter input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1;
+  border-radius: 0;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: #4a3b28;
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: #3a2d1e;
+}
+
+.footer-bottom {
+  border-top: 1px solid #eee;
+  padding: 20px 48px;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+}
+
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+
+
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+.review-header {
+  text-align: center;
+  padding: 70px 24px 40px;
+}
+ 
+.review-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #9a8a72;
+  margin-bottom: 14px;
+}
+ 
+.review-header h1 {
+  font-size: 40px;
+  color: #4a3b28;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+ 
+.review-sub {
+  font-size: 16px;
+  color: #8a7a62;
+  max-width: 520px;
+  margin: 0 auto;
+}
+ 
+/* Two-column layout */
+.review-layout {
+  display: flex;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto 90px;
+  padding: 0 48px;
+  align-items: flex-start;
+}
+ 
+.review-left,
+.review-right {
+  flex: 1;
+}
+ 
+.col-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #4a3b28;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0d4bf;
+}
+ 
+/* Form layout */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+ 
+.review-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4a3b28;
+  margin-bottom: 6px;
+}
+ 
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+ 
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d8c9ad;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+ 
+.review-form input:focus,
+.review-form textarea:focus {
+  outline: none;
+  border-color: #4a3b28;
+}
+ 
+/* Star picker */
+.star-input label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4a3b28;
+  margin-bottom: 8px;
+}
+ 
+.pick-stars .star {
+  color: #d8c9ad;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.15s, transform 0.15s;
+  margin-right: 4px;
+}
+ 
+.pick-stars .star:hover,
+.pick-stars .star.active {
+  color: #c9a35b;
+  transform: scale(1.15);
+}
+ 
+/* Character counter */
+.char-count {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 6px;
+}
+ 
+.char-count.warn {
+  color: #c0392b;
+  font-weight: 500;
+}
+ 
+/* Submit button */
+.review-form button {
+  background: #4a3b28;
+  color: #f5efe6;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+ 
+.review-form button:hover {
+  background: #3a2d1e;
+}
+ 
+/* Form messages */
+.form-msg {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+ 
+.form-msg.success {
+  display: block;
+  background: #f0f7e6;
+  color: #4a7c23;
+  border: 1px solid #c3dfa1;
+}
+ 
+.form-msg.error {
+  display: block;
+  background: #fdf0ed;
+  color: #c0392b;
+  border: 1px solid #f0c4bc;
+}
+ 
+/* Empty state */
+.no-reviews {
+  background: #f5efe6;
+  border-radius: 10px;
+  padding: 60px 30px;
+  text-align: center;
+}
+ 
+.no-reviews-icon {
+  font-size: 48px;
+  color: #c9a35b;
+  margin-bottom: 16px;
+}
+ 
+.no-reviews-title {
+  font-size: 18px;
+  color: #4a3b28;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+ 
+.no-reviews-text {
+  font-size: 14px;
+  color: #9a8a72;
+}
+ 
+/* Review cards */
+.review-card {
+  background: #fff;
+  border: 1px solid #e0d4bf;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 16px;
+  animation: slideUp 0.4s ease;
+}
+ 
+.review-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+ 
+.review-card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4a3b28;
+}
+ 
+.review-card-date {
+  font-size: 12px;
+  color: #aaa;
+}
+ 
+.review-stars {
+  color: #c9a35b;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+ 
+.review-card-text {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+ 
+/* Note text */
+.review-note {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+
+
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
+/* ================================================= Review ================================================= */
