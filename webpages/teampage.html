@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Team Page</title>
+      <link rel="stylesheet" href="../stylesheet/style.css">
     <style>
         body {
       font-family: Arial, sans-serif;
@@ -11,40 +12,131 @@
       padding: 0;
     }
      header {
-      background: #34495e;
+      background: #D4C4AD;
       color: white;
       text-align: center;
       padding: 1em;
     }
 .team {
-      display: grid;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
 
     }
 
-    .team-details {
+    .team-details { 
+      background: white;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1em;
+    }
+     .team-details img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1em;
+    }
 
+    .team-details h3 {
+      margin: 0.5em 0;
+      color: rgb(0, 0, 0);
+    }
+
+    .team-details p {
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .Roles {
+      margin-top: 1em;
+      font-size: 0.85em;
+      color: #333;
+      text-align: left;
+    }
+
+    .Roles ul {
+      padding-left: 1.2em;
     }
 
     </style>
 </head>
 <body>
+   <section>
+    <div class="logo">Foo</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="about.html">About</a>
+      <a href="review.html">Review</a>
+      <a href="register.html">Register</a>
+      <a href="teampage.html" class="active">Team</a>
+    </nav>
+  </section>
     <header>
     <h1>Meet Our Team</h1>
   </header>
   <section class="team">
     <div class="team-details">
-      <img src="images/member1.jpg" alt="Gilbert">
+      <img src="images/member1.jpeg" alt="Gilbert">
       <h3>Gilbert</h3>
       <p>Team Leader</p>
-      <div class="contributions">
-        <strong>Contributions:</strong>
+      <div class="Roles">
+        <strong>Roles:</strong>
         <ul>
           <li></li>
-          <li>catalogue page</li>
+          <li></li>
           <li></li>
         </ul>
       </div>
     </div>
+
+    <div class="team-details">
+      <img src="images/member2.jpeg" alt="Jack">
+      <h3>Jack</h3>
+      <p></p>
+      <div class="Roles">
+        <strong>Roles:</strong>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+        <div class="team-details">
+      <img src="images/member3.jpg" alt="Rachael">
+      <h3>Rachael</h3>
+      <p></p>
+      <div class="Roles">
+        <strong>Roles:</strong>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="team-details">
+      <img src="images/member4.jpg" alt="Derrick">
+      <h3>Derrick</h3>
+      <p></p>
+      <div class="Roles">
+        <strong>Roles:</strong>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    </section>
 
 </body>
 </html>
