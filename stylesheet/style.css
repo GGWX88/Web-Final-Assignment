@@ -567,3 +567,345 @@ footer {
 /* ================================================= Review ================================================= */
 /* ================================================= Review ================================================= */
 /* ================================================= Review ================================================= */
+
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+
+.form-section{
+    max-width:550px;
+    margin:80px auto;
+    padding:0 30px;
+    text-align:center;
+}
+
+.form-section h2{
+    font-family:'Montserrat', sans-serif;
+    font-size:32px;
+    font-weight:400;
+    letter-spacing:3px;
+    color:#4a3b28;
+    margin-bottom:10px;
+}
+
+.form-section p{
+    color:#8a7a62;
+    margin-bottom:35px;
+    font-size:15px;
+}
+
+form{
+    background:#fff;
+    border:1px solid #e0d4bf;
+    border-radius:10px;
+    padding: 40px;
+    text-align:left;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+form label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-family:'Montserrat', sans-serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    font-size:12px;
+    color:#4a3b28;
+}
+
+form input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #d8c9ad;
+    border-radius:6px;
+    font-size:14px;
+    font-family:Arial,sans-serif;
+    transition:.25s;
+}
+
+form input:focus{
+    outline:none;
+    border-color:#4a3b28;
+    box-shadow:0 0 0 3px rgba(74,59,40,.1);
+}
+
+form input::placeholder{
+    color:#b1a48d;
+    font-family:Arial,sans-serif;
+}
+
+form button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    background:#4a3b28;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-family:'Montserrat',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+form button:hover{
+    background:#3a2d1e;
+}
+
+.form-link{
+    margin-top:8px;
+    text-align:center;
+    font-size:14px;
+}
+
+.form-link a{
+    color:#4a3b28;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.form-link a:hover{
+    text-decoration:underline;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.checkbox-group label{
+    text-transform: none;
+    letter-spacing:0;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.checkbox-group input {
+    width: 16px;
+    height: 16px;
+}
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+
+.form-section{
+    max-width:500px;
+    margin:80px auto;
+    padding:0 30px;
+    text-align:center;
+}
+
+.form-section h2{
+    font-family:'Montserrat', sans-serif;
+    font-size:34px;
+    font-weight:400;
+    letter-spacing:3px;
+    color:#4a3b28;
+    margin-bottom:10px;
+}
+
+.form-section > p{
+    color:#8a7a62;
+    margin-bottom:35px;
+    font-size:15px;
+}
+
+form{
+    background:#fff;
+    border:1px solid #e0d4bf;
+    border-radius:10px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+form label{
+    display:block;
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:8px;
+    font-family:'Montserrat', sans-serif;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#4a3b28;
+}
+
+form input{
+    width:92%;
+    margin: auto;
+    display: block;
+    padding:16px;
+    border:1px solid #d8c9ad;
+    border-radius:6px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+}
+
+form input::placeholder{
+    color:#b1a48d;
+}
+
+form input:focus{
+    outline:none;
+    border-color:#4a3b28;
+    box-shadow:0 0 0 3px rgba(74,59,40,.1);
+}
+
+form button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    background:#4a3b28;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-family:'Montserrat', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+form button:hover{
+    background:#3a2d1e;
+}
+
+.form-link{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+}
+
+.form-link a{
+    color:#4a3b28;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.form-link a:hover{
+    text-decoration:underline;
+}
+
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+
+/* ================================================= About ================================================= */
+/* ================================================= About ================================================= */
+/* ================================================= About ================================================= */
+
+.about-section{
+    max-width:1000px;
+    margin:70px auto;
+    padding:0 40px;
+}
+
+.about-section h2{
+    font-family:'Montserrat', sans-serif;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:2px;
+    color:#4a3b28;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.about-section p{
+    max-width:850px;
+    margin:0 auto;
+    text-align:center;
+    color:#666;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* Why Choose Fuku */
+
+.about-list{
+    list-style:none;
+    max-width:500px;
+    margin:35px auto 0;
+    padding:0;
+}
+
+.about-list li{
+    background:#f8f4ee;
+    margin-bottom:14px;
+    padding:16px;
+    border-left:4px solid #4a3b28;
+    border-radius:6px;
+    color:#555;
+    font-size:15px;
+}
+
+/* Priorities */
+
+.priorities-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:45px;
+}
+
+.priority-card{
+    background:#fff;
+    border:1px solid #e0d4bf;
+    border-radius:10px;
+    padding:35px 28px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+}
+
+.priority-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 24px rgba(0,0,0,.08);
+}
+
+.priority-card h3{
+    font-family:'Montserrat', sans-serif;
+    color:#4a3b28;
+    font-size:20px;
+    margin-bottom:15px;
+    letter-spacing:1px;
+}
+
+.priority-card p{
+    color:#777;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.priorities-container{
+    grid-template-columns:1fr;
+}
+
+.about-section{
+    padding:0 24px;
+
+/*====FOOTER====*/
+/*====FOOTER====*/
+/*====FOOTER====*/
+
+.form-footer{
+    display: block;
+    margin-top: 18px;
+    padding-top:15px;
+    border-top: 1px solid #d8c9ad;
+    text-align:center;
+    color:#888;
+    font-size:13px;
+}
