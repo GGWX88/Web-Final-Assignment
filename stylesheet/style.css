@@ -796,6 +796,30 @@ form button:hover{
     text-decoration:underline;
 }
 
+.checkbox-login {
+    display: flex;
+    justify-content:flex-start; /*keep everything on the left */
+    align-items:center; /*vertically align checkbox and text */
+    gap: 10px; /* space between checkbox and text */
+    margin-top: 12px;
+}
+
+.checkbox-login label{
+    display:inline;
+    letter-spacing:0;
+    font-size:14px;
+    line-height:1.4;
+    margin:0;
+    text-transform:none;
+}
+
+.checkbox-login input {
+    width: 16px;
+    height: 16px;
+    margin:0;
+    flex-shrink:0;
+}
+
 /* ================================================= Login ================================================= */
 /* ================================================= Login ================================================= */
 /* ================================================= Login ================================================= */
@@ -803,102 +827,199 @@ form button:hover{
 /* ================================================= About ================================================= */
 /* ================================================= About ================================================= */
 /* ================================================= About ================================================= */
+
+/* Hero Banner */
+
+.hero{
+    background:#f5efe6;
+    padding:40px;
+    text-align:center;
+    border-bottom:1px solid #e6d9c5;
+}
+
+.hero h2{
+    font-family:'Montserrat', sans-serif;
+    font-size:48px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#4a3b28;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:16px;
+    font-weight:400;
+    letter-spacing:normal;
+    color: #3a2d1e;
+    text-align:center;
+}
+
+.hero-decription{
+    max-width:900px;
+    margin:35px auto 0;
+    color:#666;
+    font-size:17px;
+    line-height:2;
+    text-align:center;
+}
+
+.hero img{
+    width:700px;
+    max-width:90%;
+    display:block;
+    margin:35px auto;
+    border-radius:10px;
+}
+
+/* About Sections */
+/* Our Mission*/
 
 .about-section{
-    max-width:1000px;
-    margin:70px auto;
-    padding:0 40px;
+   max-width:1100px;
+   margin:70px auto;
+   padding:0 40px;
 }
 
 .about-section h2{
     font-family:'Montserrat', sans-serif;
-    font-size:30px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:28px;
     font-weight:400;
-    letter-spacing:2px;
     color:#4a3b28;
-    text-align:center;
+    text-align:top;
     margin-bottom:25px;
+    font-style:italic;
+    text-decoration:underline;
 }
 
-.about-section p{
-    max-width:850px;
-    margin:0 auto;
-    text-align:center;
+.about-section img{
+    width:400px;
+    max-width:30%;
+    border-radius:10px;
+}
+
+.about-row{
+    display:flex;
+    align-items:flex-start;
+    gap:40px;
+    align-items:center;
+}
+
+.about-mission p{
     color:#666;
-    line-height:1.8;
     font-size:15px;
+    line-height:1.9px;
+    flex:auto;
 }
 
-/* Why Choose Fuku */
+.about-vision p{
+    color:#666;
+    font-size:15px;
+    line-height:1.9px;
+    flex:auto;
+}
+
+
+/* Why Choose List */
 
 .about-list{
     list-style:none;
-    max-width:500px;
-    margin:35px auto 0;
+    max-width:600px;
+    margin:35px auto;
     padding:0;
 }
 
 .about-list li{
-    background:#f8f4ee;
-    margin-bottom:14px;
-    padding:16px;
-    border-left:4px solid #4a3b28;
-    border-radius:6px;
+    background:#faf8f5;
+    border:1px solid #e7d8c2;
+    border-radius:8px;
+    padding:18px 20px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
     color:#555;
+    font-size:20px;
+    gap:20px;
+}
+
+.about-list li img{
+    width:200px;
+    height:200px;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.about-list li span{
+    font-size:18px;
+    color:#555;
+}
+
+/*====FOOTER====*/
+/*====FOOTER====*/
+/*====FOOTER====*/
+
+footer{
+    background:#e8d3af;
+    margin-top:50px;
+    padding-top:20px;
+    border-top:1 px solid #d8c9ad; /*top border/divider */
+}
+
+.footer-content{
+    max-width:1100px; /*maximum width allowed, won't strech too much */
+    margin:auto; /*centers whole footer */
+    display:flex; /* makes everything in a row*/
+    justify-content:space-between;
+    gap:40px;
+    padding: 0 40px 30px; /** padding top 0, left/right 40px, bottom 30px *//
+}
+
+.footer-section{
+    flex:1; /*selects footer section class*/
+}
+
+.footer-section h3{
+    font-family:'Arial', sans-serif;
+    color:#4a3b28;
+    margin-bottom:15px;
+    letter-spacing:2px;
+    text-transform:none;
     font-size:15px;
 }
 
-/* Priorities */
-
-.priorities-container{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-    margin-top:45px;
+.footer-section p{
+    color:#666;
+    margin-bottom:10px;
+    line-height:1.9px;
+    text-align:left;
 }
 
-.priority-card{
-    background:#fff;
-    border:1px solid #e0d4bf;
-    border-radius:10px;
-    padding:35px 28px;
-    text-align:center;
-    box-shadow:0 6px 18px rgba(0,0,0,.05);
+.footer-section a{
+    text-decoration:none;
+    color:#666;
+    transition:0.25s;
 }
 
-.priority-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 24px rgba(0,0,0,.08);
-}
-
-.priority-card h3{
-    font-family:'Montserrat', sans-serif;
+.footer-section a:hover{
     color:#4a3b28;
-    font-size:20px;
-    margin-bottom:15px;
-    letter-spacing:1px;
+    padding-left:5px;
 }
 
-.priority-card p{
+footer hr{
+    border:none;
+    border-top:1px solid #d8c9ad;
+    width:90%;
+    margin:0 auto;
+}
+
+footer small{
+    display:block;
+    text-align:center;
+    padding:20px;
     color:#777;
-    font-size:14px;
-    line-height:1.7;
+    font-size:13px;
 }
-
-/* Responsive */
-
-@media(max-width:900px){
-
-.priorities-container{
-    grid-template-columns:1fr;
-}
-
-.about-section{
-    padding:0 24px;
-
-/*====FOOTER====*/
-/*====FOOTER====*/
-/*====FOOTER====*/
 
 .form-footer{
     display: block;
