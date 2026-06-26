@@ -52,11 +52,11 @@ header {
   font-size: 14px;
 }
 
-nav a:hover {
+.main-nav a:hover {
   color: #000;
 }
 
-nav a.active {
+.main-nav a.active {
   font-weight: bold;
   border-bottom: 2px solid #4a3b28;
   padding-bottom: 4px;
