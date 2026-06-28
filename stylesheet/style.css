@@ -1030,6 +1030,72 @@ footer small{
     color:#888;
     font-size:13px;
 }
-/*====FOOTER FOR ABOUT, REGISTER, LOGIN ====*/
-/*====FOOTER FOR ABOUT, REGISTER, LOGIN ====*/
-/*====FOOTER FOR ABOUT, REGISTER, LOGIN ====*/
+/*====FOOTER FOR ABOUT, REGISTER, LOGIN , TEAM ====*/
+/*====FOOTER FOR ABOUT, REGISTER, LOGIN, TEAM ====*/
+/*====FOOTER FOR ABOUT, REGISTER, LOGIN, TEAM ====*/
+
+/* ================================= TEAM PAGE ================================= */
+
+.team-hero{
+    text-align:center;
+    padding:80px 20px;
+    background:#f5efe6;
+}
+
+.team-hero h1{
+    font-family:'Montserrat', sans-serif;
+    font-size:48px;
+    font-weight:400;
+    letter-spacing:4px;
+    color:#4a3b28;
+    margin-bottom:15px;
+}
+
+.team-hero p{
+    color:#8a7a62;
+    font-size:16px;
+}
+
+.team-members{
+    max-width:1200px;
+    margin:70px auto;
+    padding:0 40px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.team-card{
+    background:#faf8f5;
+    border:1px solid #d8c9ad;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+}
+
+.team-card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:20px;
+}
+
+.team-card h2{
+    font-family:'Montserrat', sans-serif;
+    color:#4a3b28;
+    margin-bottom:10px;
+}
+
+.team-card h3{
+    color:#8a7a62;
+    font-size:14px;
+    margin-bottom:15px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.team-card p{
+    color:#666;
+    line-height:1.8;
+}
