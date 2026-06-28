@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio — Derrick | Fuku</title>
+  <link rel="stylesheet" href="../stylesheet/style.css">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-color: #D4C4AD;
+      --secondary-color: #2c3e50;
+      --light-bg: #f4f4f9;
+      --accent: #3498db;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2em;
+      max-width: 1000px;
+      margin: 2em auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 2em;
+    }
+
+    .profile-grid img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .bio h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--secondary-color);
+    }
+
+    .bio p {
+      margin: 0.5em 0;
+      color: #555;
+    }
+
+    /* Skills with progress bars */
+    .skills {
+      margin-top: 1.5em;
+    }
+
+    .skills h3 {
+      color: var(--secondary-color);
+    }
+
+    .skill {
+      margin: 0.5em 0;
+    }
+
+    .skill-name {
+      margin-bottom: 0.3em;
+    }
+
+    .progress {
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 15px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      animation: fillBar 2s forwards;
+    }
+
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--level); }
+    }
+
+    /* Projects section */
+    .projects {
+      margin-top: 2em;
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      flex: 1 1 45%;
+      background: var(--light-bg);
+      padding: 1em;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* CV Button */
+    .cv-button {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 0.8em 1.5em;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background: #217dbb;
+    }
+
+    /* Print stylesheet */
+    @media print {
+      header, .cv-button { display: none; }
+      body { background: white; }
+      .profile-grid { box-shadow: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Fuku</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="teampage.html">Team</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="profile-grid">
+      <img src="images/member1.jpeg" alt="Derrick">
+      <div class="bio">
+        <h2>Derrick</h2>
+        <p><em>Developer & Designer</em></p>
+        <p>Derrick specializes in front-end development and creative design. He focuses on building responsive layouts, interactive features, and ensuring smooth user experiences.</p>
+
+        <h3>Education</h3>
+        <p>BSc (Hons) INFORMATION TECHNOLOGY (COMPUTER NETWORKING and SECURITY), Sunway University</p>
+
+        <div class="skills">
+          <h3>Technical Skills</h3>
+          <div class="skill">
+            <div class="skill-name">HTML & CSS</div>
+            <div class="progress"><div class="progress-bar" style="--level: 95%;"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="progress"><div class="progress-bar" style="--level: 80%;"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="progress"><div class="progress-bar" style="--level: 70%;"></div></div>
+          </div>
+        </div>
+
+        <div class="projects">
+          <div class="project-card">
+            <h4>Responsive Team Page</h4>
+            <p>Designed and implemented a responsive team directory using CSS Grid and Flexbox.</p>
+          </div>
+          <div class="project-card">
+            <h4>Interactive Quiz App</h4>
+            <p>Built a JavaScript-based quiz application with dynamic scoring and animations.</p>
+          </div>
+        </div>
+
+        <a href="#" class="cv-button">Download CV</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
