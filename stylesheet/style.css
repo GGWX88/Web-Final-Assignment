@@ -1,9 +1,3 @@
-/* ================================================= Home ================================================= */
-/* ================================================= Home ================================================= */
-/* ================================================= Home ================================================= */
-/* ================================================= Home ================================================= */
-/* ================================================= Home ================================================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +11,11 @@ body {
   background: #fff;
   transition: background 0.2s, color 0.2s;
 }
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
+/* ================================================= Home ================================================= */
 
 /* ===================== Navigation Bar ===================== */
 header {
@@ -34,6 +33,7 @@ header {
   letter-spacing: 8px;
   color: #4a3b28;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .main-nav {
@@ -62,20 +62,20 @@ header {
 }
 
 /* ===================== Hero ===================== */
-.hero {
+.main-banner {
   position: relative;
   height: 80vh;
   overflow: hidden;
 }
 
-.hero img {
+.main-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
 }
 
-.hero-overlay {
+.banner-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -84,7 +84,7 @@ header {
   background: rgba(0,0,0,0.5);
 }
 
-.hero-text {
+.banner-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -92,14 +92,14 @@ header {
   text-align: center;
 }
 
-.hero-text h1 {
+.banner-text h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 36px;
   color: #fff;
   margin-bottom: 12px;
 }
 
-.hero-text p {
+.banner-text p {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   color: #fff;
@@ -127,7 +127,7 @@ header {
 .categories {
   display: flex;
   gap: 4px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .category-card {
@@ -626,74 +626,258 @@ footer {
 /* ================================================= Review ================================================= */
 
 
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
 
- 
-/* ===================== Member Page ===================== */
-.member-header {
-  text-align: center;
-  padding: 70px 24px 40px;
+.form-section{
+    max-width:550px;
+    margin:80px auto;
+    padding:0 30px;
+    text-align:center;
 }
 
-.member-layout {
-  max-width: 600px;
-  margin: 0 auto 90px;
-  padding: 0 48px;
+.form-section h2{
+    font-family:'Montserrat', sans-serif;
+    font-size:32px;
+    font-weight:400;
+    letter-spacing:3px;
+    color:#4a3b28;
+    margin-bottom:10px;
 }
 
-.member-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 28px;
-  border-bottom: 1px solid #e0d4bf;
+.form-section p{
+    color:#8a7a62;
+    margin-bottom:35px;
+    font-size:15px;
 }
 
-.member-tab {
-  flex: 1;
-  background: none;
-  border: none;
-  padding: 14px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #9a8a72;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+form{
+    background:#fff;
+    border:1px solid #e0d4bf;
+    border-radius:10px;
+    padding: 40px;
+    text-align:left;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
 }
 
-.member-tab.active {
-  color: #4a3b28;
-  border-bottom-color: #4a3b28;
+form label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-family:'Montserrat', sans-serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    font-size:12px;
+    color:#4a3b28;
 }
 
-.member-panel {
-  display: none;
+form input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #d8c9ad;
+    border-radius:6px;
+    font-size:14px;
+    font-family:Arial,sans-serif;
+    transition:.25s;
 }
 
-.member-panel.active {
-  display: block;
+form input:focus{
+    outline:none;
+    border-color:#4a3b28;
+    box-shadow:0 0 0 3px rgba(74,59,40,.1);
 }
 
-.terms-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #555;
+form input::placeholder{
+    color:#b1a48d;
+    font-family:Arial,sans-serif;
 }
 
-.terms-row input {
-  width: auto;
+form button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    background:#4a3b28;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-family:'Montserrat',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
 }
 
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
-/* ================================================= Member ================================================= */
+form button:hover{
+    background:#3a2d1e;
+}
+
+.form-link{
+    margin-top:8px;
+    text-align:center;
+    font-size:14px;
+}
+
+.form-link a{
+    color:#4a3b28;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.form-link a:hover{
+    text-decoration:underline;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.checkbox-group label{
+    text-transform: none;
+    letter-spacing:0;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.checkbox-group input {
+    width: 16px;
+    height: 16px;
+}
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+/* ================================================= Register ================================================= */
+
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+
+.form-section{
+    max-width:500px;
+    margin:80px auto;
+    padding:0 30px;
+    text-align:center;
+}
+
+.form-section h2{
+    font-family:'Montserrat', sans-serif;
+    font-size:34px;
+    font-weight:400;
+    letter-spacing:3px;
+    color:#4a3b28;
+    margin-bottom:10px;
+}
+
+.form-section > p{
+    color:#8a7a62;
+    margin-bottom:35px;
+    font-size:15px;
+}
+
+form{
+    background:#fff;
+    border:1px solid #e0d4bf;
+    border-radius:10px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+form label{
+    display:block;
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:8px;
+    font-family:'Montserrat', sans-serif;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#4a3b28;
+}
+
+form input{
+    width:92%;
+    margin: auto;
+    display: block;
+    padding:16px;
+    border:1px solid #d8c9ad;
+    border-radius:6px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+}
+
+form input::placeholder{
+    color:#b1a48d;
+}
+
+form input:focus{
+    outline:none;
+    border-color:#4a3b28;
+    box-shadow:0 0 0 3px rgba(74,59,40,.1);
+}
+
+form button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    background:#4a3b28;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-family:'Montserrat', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+form button:hover{
+    background:#3a2d1e;
+}
+
+.form-link{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+}
+
+.form-link a{
+    color:#4a3b28;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.form-link a:hover{
+    text-decoration:underline;
+}
+
+.checkbox-login {
+    display: flex;
+    justify-content:flex-start; /*keep everything on the left */
+    align-items:center; /*vertically align checkbox and text */
+    gap: 10px; /* space between checkbox and text */
+    margin-top: 12px;
+}
+
+.checkbox-login label{
+    display:inline;
+    letter-spacing:0;
+    font-size:14px;
+    line-height:1.4;
+    margin:0;
+    text-transform:none;
+}
+
+.checkbox-login input {
+    width: 16px;
+    height: 16px;
+    margin:0;
+    flex-shrink:0;
+}
+
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
+/* ================================================= Login ================================================= */
