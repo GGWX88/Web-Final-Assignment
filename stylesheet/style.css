@@ -881,3 +881,256 @@ form button:hover{
 /* ================================================= Login ================================================= */
 /* ================================================= Login ================================================= */
 /* ================================================= Login ================================================= */
+
+/* ================================================= About ================================================= */
+/* ================================================= About ================================================= */
+/* ================================================= About ================================================= */
+
+/* ===================== Hero ===================== */
+.about-banner {
+  position: relative;
+  width: 100%;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.aboutbanner-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* fade the image into white on the left so the text stays readable */
+.about-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.92) 28%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 1;
+}
+
+.aboutbanner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 540px;
+  padding: 0 48px;
+  margin-left: 4%;
+}
+
+.aboutbanner-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #4a3b28;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
+}
+
+.aboutbanner-tagline {
+  font-size: 17px;
+  color: #6b5c45;
+  margin-bottom: 28px;
+}
+
+.aboutbanner-description {
+  font-size: 16px;
+  color: #4a3b28;
+  line-height: 1.9;
+}
+
+/* ===================== About sections ===================== */
+.about-section {
+  padding: 50px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #4a3b28;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.about-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: #faf6ee;
+  border: 1px solid #e8d3af;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(74, 59, 40, 0.08);
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-row-img {
+  flex: 1;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.about-row-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.about-row-img:hover img {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 1;
+  padding: 48px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #a08b6a;
+  margin-bottom: 12px;
+}
+
+.about-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #4a3b28;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  position: relative;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.about-text h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 54px;
+  height: 3px;
+  background: #4a3b28;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #5b4a33;
+  line-height: 1.9;
+}
+
+.about-points {
+  list-style: none;
+  margin-top: 22px;
+}
+
+.about-points li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #5b4a33;
+}
+
+.about-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #4a3b28;
+  font-weight: bold;
+}
+
+/* ===================== Why choose list ===================== */
+.about-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.about-list li {
+  text-align: center;
+  background: #faf6ee;
+  border: 1px solid #e8d3af;
+  border-radius: 8px;
+  padding: 24px 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(74, 59, 40, 0.12);
+}
+
+.about-list img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.about-list span {
+  display: block;
+  font-size: 15px;
+  color: #4a3b28;
+  font-weight: 600;
+}
+
+/* Responsive: fewer columns / stacked rows on smaller screens */
+@media (max-width: 980px) {
+  .about-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column;
+  }
+  .about-row-img { width: 100%; min-height: 260px; }
+  .about-text { padding: 32px 28px; }
+  .about-list { grid-template-columns: repeat(2, 1fr); }
+
+  /* about banner: stronger fade + full-width text so it stays readable over the image */
+  .about-banner { min-height: 70vh; }
+  .about-banner::before {
+    background: linear-gradient(
+      to right,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.9) 55%,
+      rgba(255, 255, 255, 0.35) 100%
+    );
+  }
+  .aboutbanner-content { margin-left: 0; max-width: 100%; }
+  .aboutbanner-content h2 { font-size: 30px; }
+}
