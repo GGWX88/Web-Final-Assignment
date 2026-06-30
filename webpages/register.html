@@ -1,145 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Member — Fuku</title>
-  <link rel="stylesheet" href="../stylesheet/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="logo">Fuku</div>
-    <nav class = "main-nav">
-      <a href="index.html">Home</a>
-      <a href="catalogue.html">Catalogue</a>
-      <a href="about.html">About</a>
-      <a href="review.html">Review</a>
-      <a href="register.html" class="active">Member</a>
-    </nav>
-  </header>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register — Fuku</title>
+        <link rel = "stylesheet" href = "../stylesheet/style.css">
+        <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    </head>
 
-  <main>
-    <div class="member-header">
-      <p class="review-eyebrow">Join Fuku</p>
-      <h1>Member Account</h1>
-      <p class="review-sub">Register a new account or log in to an existing one. Your details are saved in your browser for this demo.</p>
-    </div>
+    <body>
+     
+        <header>
 
-    <div class="member-layout">
-      <div class="member-tabs">
-        <button class="member-tab active" id="tab-register" data-tab="register">Register</button>
-        <button class="member-tab" id="tab-login" data-tab="login">Login</button>
-      </div>
+            <div class = "logo">Fuku</div>
 
-      <!-- Register form -->
-      <div class="member-panel active" id="panel-register">
-        <p class="form-msg" id="reg-msg"></p>
-        <div class="review-form" id="register-form">
-          <div class="form-row">
-            <div class="form-half">
-              <label for="reg-name">Name</label>
-              <input type="text" id="reg-name" placeholder="Your full name">
-            </div>
-            <div class="form-half">
-              <label for="reg-email">Email</label>
-              <input type="email" id="reg-email" placeholder="Your email">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-half">
-              <label for="reg-password">Password</label>
-              <input type="password" id="reg-password" placeholder="Create a password">
-            </div>
-            <div class="form-half">
-              <label for="reg-confirm">Confirm Password</label>
-              <input type="password" id="reg-confirm" placeholder="Re-enter password">
-            </div>
-          </div>
-          <div class="form-full">
-            <label for="reg-phone">Phone</label>
-            <input type="tel" id="reg-phone" placeholder="Your phone number">
-          </div>
-          <div class="form-row">
-            <div class="form-half">
-              <label for="reg-address">Address</label>
-              <input type="text" id="reg-address" placeholder="Street address">
-            </div>
-            <div class="form-half">
-              <label for="reg-city">City</label>
-              <input type="text" id="reg-city" placeholder="City">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-half">
-              <label for="reg-postcode">Postcode</label>
-              <input type="text" id="reg-postcode" placeholder="Postcode">
-            </div>
-            <div class="form-half"></div>
-          </div>
-          <div class="terms-row">
-            <input type="checkbox" id="reg-terms">
-            <label for="reg-terms">I agree to the Terms &amp; Conditions</label>
-          </div>
-          <button id="reg-submit">Create Account</button>
-        </div>
-      </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="catalogue.html">Catalogue</a>
+                <a href="about.html">About</a>
+                <a href="review.html">Review</a>
+                <a href="login.html">Member</a>
+            </nav>
 
-      <!-- Login form -->
-      <div class="member-panel" id="panel-login">
-        <p class="form-msg" id="login-msg"></p>
-        <div class="review-form" id="login-form">
-          <div class="form-full">
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" placeholder="Your email">
-          </div>
-          <div class="form-full">
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" placeholder="Your password">
-          </div>
-          <button id="login-submit">Log In</button>
-        </div>
-      </div>
-    </div>
-  </main>
+        </header>
 
-  <footer>
-  <div class="footer-top">
-    <div class="footer-column">
-      <h4>Shop</h4>
-      <a href="catalogue.html">Women</a>
-      <a href="catalogue.html">Men</a>
-    </div>
-    <div class="footer-column">
-      <h4>About</h4>
-      <a href="about.html">About Us</a>
-    </div>
-    <div class="footer-column">
-      <h4>Support</h4>
-      <a href="#">FAQs</a>
-      <a href="#">Contact Us</a>
-    </div>
-    <div class="footer-column">
-      <h4>Got a question?</h4>
-      <p>+6016-417-5751</p>
-      <p>fuku@gmail.com</p>
-    </div>
-    <div class="footer-column">
-      <h4>Get updates when you sign up.</h4>
-      <p>Receive the latest updates and more.</p>
-      <div class="newsletter">
-        <input type="email" placeholder="Enter your email">
-        <button>Submit</button>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 Fuku. All rights reserved.</p>
-  </div>
-</footer>
+        <section class = "form-section">
 
-  <script src="../js/register.js"></script>
+            <h2>Create an Account</h2>
+            <p>Join Fuku today and enjoy exclusive fashion collections.</p>
+
+            <form>
+
+                <label for="fullname">Full Name</label>
+                <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Enter your full name"
+                    required>
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+60..."
+                    required>
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    required>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required>
+
+                <button type="submit">Register</button>
+
+                <p class="form-link">
+                    Already have an account?
+                    <a href = "login.html">Login Here</a>
+                </p>
+
+                <div class="checkbox-group">
+                    <input
+                        type="checkbox"
+                        id="checkbox"
+                        required>
+                    
+                    <label for="checkbox">
+                        I have read and agree to the 
+                        <strong>Terms &amp; Conditions</strong> and 
+                        <strong>Privacy Policy</strong>.
+                    </label>
+                </div>
+<!--Copyright Footer-->
+    <div class="form-footer">
+        <small>
+            <i>&copy; 2026 Fuku. All Rights Reserved.</i>
+        </small>
+    </div>
+</form>
+</section>
 </body>
 </html>
+
