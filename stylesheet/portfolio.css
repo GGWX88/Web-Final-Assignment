@@ -1,0 +1,189 @@
+    /* CSS Variables */
+    :root {
+      --primary-color: #D4C4AD;
+      --secondary-color: #2c3e50;
+      --light-bg: #f4f4f9;
+      --accent: #3498db;
+      --font-family: 'Montserrat', sans-serif;
+      --spacing: 1em;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: var(--spacing);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2em;
+      max-width: 1250px;
+      margin: 2em auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 2em;
+    }
+
+    .profile-grid img {
+      justify-self: center;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .bio h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--secondary-color);
+    }
+
+    .bio p {
+      margin: 0.5em 0;
+      color: #555;
+    }
+
+    /* Skills with progress bars */
+    .skills {
+      margin-top: 1.5em;
+    }
+
+    .skills h3 {
+      color: var(--secondary-color);
+    }
+
+    .skill {
+      margin: 0.5em 0;
+    }
+
+    .skill-name {
+      margin-bottom: 0.3em;
+    }
+
+    .progress {
+      position: relative;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+      /* slightly taller for label visibility */
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      animation: fillBar 2s forwards;
+      position: relative;
+      /* ensures span is positioned inside */
+    }
+
+    .progress-bar span {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .progress-bar:hover span {
+      opacity: 1;
+    }
+
+    /* Individual skill colours and levels */
+    .progress-bar.html {
+      background: #e67e22;
+      --level: 67%;
+    }
+
+    .progress-bar.js {
+      background: #f1c40f;
+      --level: 40%;
+    }
+
+    .progress-bar.py {
+      background: #3498db;
+      --level: 50%;
+    }
+
+    /* Purpose is to have a smooth animation */
+    @keyframes fillBar {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: var(--level);
+      }
+    }
+
+    .projects {
+      margin-top: 2em;
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      flex: 1 1 45%;
+      background: var(--light-bg);
+      padding: 1em;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cv-button {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 0.8em 1.5em;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background: #217dbb;
+    }
+
+
+    /* Hide elements, simplified layout, change colours and optimize the content */
+    @media print {
+
+      header,
+      .cv-button {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .profile-grid {
+        box-shadow: none;
+      }
+    }
