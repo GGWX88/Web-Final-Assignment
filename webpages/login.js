@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // ===== FUNCTION 1: CHECK IF USER IS ALREADY LOGGED IN =====
 function checkIfAlreadyLoggedIn() {
-  let savedEmail = localStorage.getItem('noru-logged-in-user');
+  let savedEmail = localStorage.getItem('fuku-logged-in-user');
   if (savedEmail) {
     showWelcomeMessage(savedEmail);
   }
@@ -68,9 +68,9 @@ function setupLoginForm() {
 // ===== FUNCTION 3: HANDLE SUCCESSFUL LOGIN =====
 function handleSuccessfulLogin(email, isRemembered) {
   if (isRemembered) {
-    localStorage.setItem('noru-logged-in-user', email);
+    localStorage.setItem('fuku-logged-in-user', email);
   } else {
-    localStorage.removeItem('noru-logged-in-user');
+    localStorage.removeItem('fuku-logged-in-user');
   }
 
   showWelcomeMessage(email);
@@ -90,7 +90,7 @@ function showWelcomeMessage(email) {
 
   welcomeBox.innerHTML = `
     <h2>Login Successful!</h2>
-    <p>Welcome back, <strong>${userName}</strong>! You are now logged into your Noru account.</p>
+    <p>Welcome back, <strong>${userName}</strong>! You are now logged into your Fuku account.</p>
     <button id="logout-btn" class="shop-button">Logout</button>
   `;
 
@@ -105,14 +105,14 @@ function showWelcomeMessage(email) {
 
 // ===== FUNCTION 5: HANDLE LOGOUT =====
 function handleLogout() {
-  localStorage.removeItem('noru-logged-in-user');
+  localStorage.removeItem('fuku-logged-in-user');
 
   location.reload();
 }
 
 // ===== FUNCTION 5B: LOAD ALL REGISTERED USERS =====
 function loadAllUsers() {
-  let usersStr = localStorage.getItem('noru-users');
+  let usersStr = localStorage.getItem('fuku-users');
 
   if (usersStr) {
     return JSON.parse(usersStr);

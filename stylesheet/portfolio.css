@@ -1,25 +1,11 @@
     /* CSS Variables */
     :root {
-      --primary-color: #D4C4AD;
-      --secondary-color: #2c3e50;
-      --light-bg: #f4f4f9;
-      --accent: #3498db;
+      --primary-color: #4a3b28;
+      --secondary-color: #4a3b28;
+      --light-bg: #faf6ee;
+      --accent: #4a3b28;
       --font-family: 'Montserrat', sans-serif;
       --spacing: 1em;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background-color: var(--light-bg);
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: var(--spacing);
     }
 
     .profile-grid {
@@ -109,20 +95,23 @@
       opacity: 1;
     }
 
-    /* Individual skill colours and levels */
+    /* Skill colours only - each page sets its own --level inline
+       (style="--level: X%" on the .progress-bar element itself),
+       so everyone's percentage is independent instead of shared here */
     .progress-bar.html {
       background: #e67e22;
-      --level: 67%;
     }
 
     .progress-bar.js {
       background: #f1c40f;
-      --level: 40%;
     }
 
     .progress-bar.py {
       background: #3498db;
-      --level: 50%;
+    }
+
+    .progress-bar {
+      --level: 0%;
     }
 
     /* Purpose is to have a smooth animation */
@@ -167,9 +156,52 @@
     }
 
     .cv-button:hover {
-      background: #217dbb;
+      background: #3a2d1e;
     }
 
+    /* Dark mode - matches the site-wide toggle in theme.js */
+    body.dark-mode .profile-grid {
+      background: #2d2d2d;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    body.dark-mode .profile-grid img {
+      border-color: #e8d3af;
+    }
+
+    body.dark-mode .bio h2,
+    body.dark-mode .skills h3 {
+      color: #e8d3af;
+    }
+
+    body.dark-mode .bio p {
+      color: #ccc;
+    }
+
+    body.dark-mode .progress {
+      background: #444;
+    }
+
+    body.dark-mode .project-card {
+      background: #1a1a1a;
+    }
+
+    body.dark-mode .project-card h4 {
+      color: #e8d3af;
+    }
+
+    body.dark-mode .project-card p {
+      color: #ccc;
+    }
+
+    body.dark-mode .cv-button {
+      background: #e8d3af;
+      color: #1a1a1a;
+    }
+
+    body.dark-mode .cv-button:hover {
+      background: #fff;
+    }
 
     /* Hide elements, simplified layout, change colours and optimize the content */
     @media print {

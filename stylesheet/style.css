@@ -1271,6 +1271,16 @@ body.dark-mode .aboutbanner-description {
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* Show the whole photo instead of cropping/zooming into it */
+.team-grid img {
+  object-fit: contain;
+  background: #faf6ee;
+}
+
+body.dark-mode .team-grid img {
+  background: #2d2d2d;
+}
+
 /* make the whole card clickable while keeping the card styling */
 .about-list a {
   display: block;

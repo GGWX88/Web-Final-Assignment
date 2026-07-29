@@ -6,7 +6,7 @@ setupFormSubmission();
 
 // ===== FUNCTION 1: LOAD REVIEWS FROM MEMORY =====
 function loadReviewsFromMemory() {
-  let savedReviews = localStorage.getItem('noru-reviews');
+  let savedReviews = localStorage.getItem('fuku-reviews');
 
   if (savedReviews) {
     return JSON.parse(savedReviews);
@@ -18,7 +18,7 @@ function loadReviewsFromMemory() {
 // ===== FUNCTION 2: SAVE REVIEWS TO MEMORY =====
 function saveReviewsToMemory() {
   let reviewsAsText = JSON.stringify(allReviews);
-  localStorage.setItem('noru-reviews', reviewsAsText);
+  localStorage.setItem('fuku-reviews', reviewsAsText);
 }
 
 // ===== FUNCTION 3: STAR RATING SYSTEM =====

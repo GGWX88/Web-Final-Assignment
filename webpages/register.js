@@ -193,14 +193,14 @@ function handleSubmitRegistration() {
   // Load the existing list of users, add the new one, and save the whole list back
   let allUsers = loadAllUsers();
   allUsers.push(window.registrationData);
-  localStorage.setItem('noru-users', JSON.stringify(allUsers));
+  localStorage.setItem('fuku-users', JSON.stringify(allUsers));
 
   showSuccessPage();
 }
 
 // ===== FUNCTION 8B: LOAD ALL REGISTERED USERS =====
 function loadAllUsers() {
-  let usersStr = localStorage.getItem('noru-users');
+  let usersStr = localStorage.getItem('fuku-users');
 
   if (usersStr) {
     return JSON.parse(usersStr);
@@ -238,7 +238,7 @@ function showSuccessPage() {
 
   successBox.innerHTML = `
     <h2>Registration Successful!</h2>
-    <p>Welcome to Noru, <strong>${userName}</strong>! A confirmation email has been sent to ${window.registrationData.email}</p>
+    <p>Welcome to Fuku, <strong>${userName}</strong>! A confirmation email has been sent to ${window.registrationData.email}</p>
     <a href="login.html" class="shop-button">Go to Login</a>
   `;
 

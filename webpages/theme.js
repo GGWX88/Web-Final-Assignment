@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function() {
 // ===== FUNCTION 1: LOAD SAVED THEME PREFERENCE =====
 function loadThemePreference() {
   // Get the saved theme from browser memory
-  let savedTheme = localStorage.getItem('noru-theme');
+  let savedTheme = localStorage.getItem('fuku-theme');
 
   // If user had dark mode on before, apply it
   if (savedTheme === 'dark') {
@@ -51,11 +51,11 @@ function toggleTheme() {
 
   if (isDarkMode) {
     document.body.classList.remove('dark-mode');
-    localStorage.setItem('noru-theme', 'light');
+    localStorage.setItem('fuku-theme', 'light');
     updateThemeButton('🌙'); // Show moon (to switch to dark)
   } else {
     document.body.classList.add('dark-mode');
-    localStorage.setItem('noru-theme', 'dark');
+    localStorage.setItem('fuku-theme', 'dark');
     updateThemeButton('☀️');
   }
 }
