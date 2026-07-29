@@ -1,0 +1,11 @@
+# Prevent Git from touching line endings in binary files.
+# Without this, core.autocrlf can silently corrupt these files on checkout
+# (e.g. rewriting bytes inside a PDF's internal byte-offset table).
+
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.gif binary
+*.ico binary
