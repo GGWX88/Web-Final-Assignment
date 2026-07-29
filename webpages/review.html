@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="theme.js"></script>
 </head>
 <body>
   <header>
@@ -33,7 +34,7 @@
       <!-- LEFT: write a review form -->
       <div class="review-left">
         <h2 class="col-title">Leave a review</h2>
-        <p class="form-msg" id="rv-msg"></p>
+        <div class="form-msg" id="rv-msg"></div>
         <div class="review-form" id="review-form">
           <div class="form-row">
             <div class="form-half">
@@ -72,10 +73,12 @@
       <div class="review-right">
         <h2 class="col-title">Recent reviews</h2>
         <div id="reviews-container"></div>
-        <p class="review-note">Note: the duplicate check (by email or phone) is a client-side demonstration of validation logic, not real identity verification.</p>
-      </div>
     </div>
   </main>
+
+  <script src="messages.js"></script>
+  <script src="review.js"></script>
+  <script src="newsletter.js"></script>
 
   <footer>
   <div class="footer-top">
