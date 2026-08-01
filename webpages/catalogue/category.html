@@ -10,21 +10,25 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 	<style>
-	/*-----page menu-----*/
+	/*------page menu------*/
 		.page-menu {
-			padding: 1.5% 0 0% 0;
+			padding: 1.1% 0 0.4% 0;
 			height: 25vh;
 			a {
 				text-decoration: none;
 				color: gray;
 			}
-			border-bottom: 1px solid #c0c0c0;
 			background-color: #f7f7f7;
 		}
+		.bottom-border {
+			border-bottom: 1px solid #c0c0c0;
+		}
 		.website-path {
-			display: inline-block;
 			padding: 0 0 0 2%;
 			font-size: 14px;
+		}
+		.current-page {
+			font-weight: bold;
 		}
 		.page-name {
 			text-align: center;
@@ -32,11 +36,12 @@
 			font-size: 50px;
 		}
 
-	/*-----cards-----*/
+	/*------cards------*/
 		.catalogue {
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
+			padding-bottom: 10vh;
 		}
 		.card {
 			width: 23vw;
@@ -67,6 +72,8 @@
 			color: grey;
 		}
 	</style>
+	<script defer src="./database.js"></script>
+	<script defer src="./category.js"></script>
 </head>
 <body>
 	<!------[Navigation Bar (Top)]------>
@@ -82,12 +89,12 @@
 	</header>
 
 	<!------[Page Menu]------>
-	<section class="page-menu">
+	<section class="page-menu bottom-border">
 		<template id="page-menu-template">
-			<span class="website-path">		<!--change span to nav-->
-				<a href="../index.html">Home</a> /
+			<nav class="website-path">
+				<a href="../index.html">Home</a>&nbsp;/
 				<span class="current-page"></span>
-			</span>		<!--change span to nav-->
+			</nav>
 			<p class="page-name"></p>
 		</template>
 	</section>
@@ -97,28 +104,17 @@
 	<section class="catalogue">
 		<template id="card-template">
 			<article class="card">
-				<img class="card-img">
+				<a class="product-page">
+					<img class="card-img">
+				</a>
 				<div class="card-info">
 					<h5 class="card-title"></h5>
-					<span class="card-price"></span>
+					<span class="card-price">RM&nbsp;<span class="card-price--value"></span></span>
 				</div>
 			</article>
 		</template>
 	</section>
 
-	<!------[Card Pop-up]------>
-	<template class="">
-		<div>
-			<img class="">	<!--float left-->
-			<h5 class="pop-up-title"></h5>
-			<span class="pop-up-price"></span>
-			<button>S</button><button>M</button><button>L</button><button>XL</button>
-			<button>ADD TO CART</button>
-			<p class="product-description"></p>
-			<span class="material"></span>
-			<span></span>
-		</div>
-	</template>
 
 	<!------[Navigation Bar (Bottom)]------>
 	<footer>
@@ -158,57 +154,3 @@
 </body>
 </html>
 
-
-<script>
-	/*----------[Catalogue HTMLs]---------*/
-	//general shared variables
-	let template;
-	let clone;
-	let imgFilePath;
-
-	// product categories
-	let menBottom;
-
-	//-----page menu-----
-	template = document.getElementById("page-menu-template");
-	clone = template.content.cloneNode(true);
-	clone.querySelector(".current-page").innerText = "Men Bottom";
-	clone.querySelector(".page-name").innerText = "Men Bottom";
-	document.querySelector(".page-menu").appendChild(clone);
-
-	//------cards------
-	// product list
-	// format: ["image link", "product name", "price",	 "description", ]
-	imgFilePath = "../../img/products/";
-	menBottom = [
-		[`${imgFilePath}bot-1.webp`, "Black Short", "RM 59.99"],
-		[`${imgFilePath}bot-2.webp`, "Black Short", "RM 59.99"],
-		[`${imgFilePath}bot-3.webp`, "Black Short", "RM 59.99"],
-		[`${imgFilePath}bot-4.webp`, "Black Short", "RM 59.99"],
-		[`${imgFilePath}bot-5.webp`, "Black Short", "RM 59.99"],
-		[`${imgFilePath}bot-6.webp`, "Black Short", "RM 59.99"],
-		[`${imgFilePath}bot-7.webp`, "Black Short", "RM 59.99"]
-	];
-
-	template = document.getElementById("card-template");
-
-	// print cards
-	for (let i = 0; i < menBottom.length; i++)
-	{
-		clone = template.content.cloneNode(true);
-		clone.querySelector(".card-img").setAttribute("src", menBottom[i][0]);
-		clone.querySelector(".card-img").setAttribute("alt", menBottom[i][1]);
-		clone.querySelector(".card-img").setAttribute("title", menBottom[i][1]);
-		clone.querySelector(".card-img").addEventListener("click", cardPopUp)
-		clone.querySelector(".card-title").innerHTML = menBottom[i][1];
-		clone.querySelector(".card-price").innerHTML = menBottom[i][2];
-		document.querySelector(".catalogue").appendChild(clone);
-	}
-
-	// card pop-up (when image is clicked)
-	function cardPopUp()
-	{
-		
-	}
-
-</script>

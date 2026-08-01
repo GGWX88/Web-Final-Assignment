@@ -1,0 +1,516 @@
+<!DOCType html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../../stylesheet/style.css">
+	<link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<style>
+		.cart-button {
+			width: 1.5vw;
+			float: right;
+			border: none;
+			background-color: transparent;
+			.cart-button-img {
+				width: 1.5vw;
+				opacity: 0.55;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+		/*------Page Menu (product.html)------*/
+		.page-menu--product {
+			padding: 0;
+			height: 8vh;
+			display: flex;
+			align-items: center;
+			border: none;
+			background-color: white;
+			a {
+				text-decoration: none;
+				color: gray;
+			}
+		}
+		.website-path--product {
+			padding-left: 2%;
+		}
+
+		/*------Product Page------*/
+		.product-details--wrapper
+		{
+			display: flex;
+			justify-content: center;
+			padding-bottom: 10vh;
+            border-bottom: 1px solid #c0c0c0;
+		}
+		.product-details {
+			width: 90vw;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+		.main-font {
+			font-family: 'Manrope';
+		}
+		.product-img {
+			height: 100vh;
+		}
+		.product-info {
+			padding-left: 2%;
+			width: 50%;
+		}
+		.product-price {
+			display: inline-block;
+			padding: 2% 0 5% 0;
+		}
+		.alter-size {
+			padding: 0 0 5% 0;
+		}
+		.alter-quantity,
+		.alter-quantity--cart {
+			padding: 6% 0 3% 0;
+			display: flex;
+		}
+		.size-button {
+			background-color: white;
+			border: 1px solid black;
+			border-radius: 10%;
+			&:hover {
+				background-color: #e8d3af;
+			}
+		}
+		.size-button--on {
+			background-color: #e8d3af;
+		}
+		.size-button,
+		.quantity,
+		.quantity-button,
+		.quantity--cart {
+			height: 5vh;
+			width: 5vh;
+			text-align: center;
+		}
+		.quantity,
+		.quantity--cart {
+			border: none;
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+		}
+		.add-to-cart-button {
+			font-weight: bold;
+			color: white;
+			background-color: black;
+			border: none;
+			height: 5vh;
+			width: 100%;
+			&:active {
+				color: #D3D3D3;
+			}
+		}
+		.sub-title {
+			font-size: 16px;
+			border-bottom: 1px gray solid;
+		}
+		.product-description {
+			padding-bottom: 5%;
+		}
+
+		/*------Recommended Items------*/
+		.recommended-header {
+			font-size: 35px;
+			padding: 4vh 0 3vh 0;
+			display: flex;
+			justify-content: center;
+		}
+		.sub-font {
+			font-family: 'Hanken Grotesk', sans-serif;
+		}
+		/*------reused from men-bottom------*/
+		.website-path {
+			padding: 0 0 0 2%;
+			font-size: 14px;
+		}
+		.current-page {
+			font-weight: bold;
+		}
+
+        .catalogue {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+			padding-bottom: 10vh;
+        }
+        .card {
+            width: 23vw;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+            float: left;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-img {
+            width: 90%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        .card-info {
+            padding-top: 1%;
+            padding-left: 7%;
+        }
+        .card-title {
+            font-weight: normal;
+            font-size: 20px;
+            font-family: 'Hanken Grotesk';
+        }
+        .card-price {
+            display: block;
+            font-size: 13px;
+            color: grey;
+        }
+	</style>
+	<style>
+		/*------[Shopping Cart]------*/
+		/*--background blur--*/
+		.on {
+			.cart-overlay {
+				inset: 0;
+				overflow: hidden !important;
+			}
+			.cart-list {
+				transform: translateX(0);
+			}
+		}
+		body:has(.shopping-cart.on) {
+		  overflow: hidden;
+		}
+		.cart-overlay {
+			position: fixed;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 998;
+		}
+
+		/*--cart list--*/
+		.cart-list {
+			width: 30vw;
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			right: 0;
+			z-index: 999;
+			background-color: white;
+			transform: translate(100%);
+		}
+		.cart-title {
+			font-size: 18px;
+			font-weight: bold;
+			padding: 3.5% 0 3.5% 6%;
+		}
+		.close-button {
+			width: 1.3vw;
+			position: fixed;
+			top: 0;
+			right: 0;
+			border: none;
+			background-color: transparent;
+			margin: 3.5% 3.5% 3.5% 0;
+			.close-button-img {
+				width: 1.3vw;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+		.cart-all-items {
+			width: 30vw;
+			height: 78vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			overflow: auto;
+		}
+		.cart-footer {
+			width: 30vw;
+			position: fixed;
+			bottom: 0;
+			padding: 2% 0 3% 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border-top: 1px solid #c0c0c0;
+		}
+		.subtotal {
+			width: 27vw;
+			font-weight: bold;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			padding-bottom: 1.5vh;
+			.subtotal-amount {
+				position: fixed;
+				right: 1.7vw;
+			}
+		}
+		.checkout-button {
+			width: 27vw;
+			height: 5vh;
+			font-size: 13.5px;
+			font-weight: bold;
+			color: white;
+			background-color: #8B0000;
+			border: none;
+			&:active {
+				color: #D3D3D3;
+			}
+		}
+		/*------[Cart Item]------*/
+		.cart-item {
+			height: 27vh;
+			width: 28vw;
+			clear: right;
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 3%;
+			padding-bottom: 4%;
+			border-bottom: 1px solid #c0c0c0;
+		}
+		.cart-item--img {
+			height: 25vh;
+		}
+		.cart-item--details {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-left: 2%;
+		}
+		.name-and-button-wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			width: 19vw;
+		}
+		.name--selected {
+			display: inline-block;
+		}
+		.remove-button {
+			display: inline-block;
+			width: 1vw;
+			border: none;
+			background-color: transparent;
+			.remove-button-img {
+				width: 1vw;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+		.price-and-quantity--cart {
+			height: fit-content;
+			width: 19.5vw;
+			margin-top: 8vh;
+
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			.price--selected {
+				display: flex;
+				align-items: center;
+				align-self: center;
+				.price-wrapper {
+				}
+			}
+			.alter-quantity--cart {
+				display: flex;
+				align-items: center;
+				height: fit-content;
+				padding: 0;
+				.button-wrapper {
+					display: flex;
+					width: fit-content;
+					vertical-align: top;
+				}
+			}
+		}
+	</style>
+	<script defer src="./database.js"></script>
+	<script defer src="./product.js"></script>
+	<script defer src="./cart.js"></script>
+</head>
+<body>
+	<!------[Navigation Bar (Top)]------>
+	<header>
+		<a href="../index.html" class="logo">Fuku</a>
+		<nav class="main-nav">
+			<a href="../index.html">Home</a>
+			<a href="../catalogue.html" class="active">Catalogue</a>
+			<a href="../about.html">About</a>
+			<a href="../review.html">Review</a>
+			<a href="../login.html">Member</a>
+			<button class="cart-button"><img class="cart-button-img" src="../../img/shopping-cart-black.png" alt="An image for a shopping cart"></button>
+		</nav>
+	</header>
+
+	<!--[Shopping Cart]-->
+	<section class="shopping-cart">
+	<div class="cart-overlay active"></div>
+
+	<aside class="cart-list">
+		<section class="cart-header">
+			<div class="cart-title sub-font">Cart (<span class="number-of-products">0</span>)</div> <!--add JS for this-->
+			<button class="close-button"><img class="close-button-img" src="../../img/close-icon.png" alt="A close button"></button>
+		</section>
+		<section class="cart-all-items">
+			<!--[Shopping Cart Items]-->
+			<template id="cart-item-template">
+		<!--added unique id-->
+			<div class="cart-item" data-id=""> 
+				<img class="cart-item--img" src="../../img/men-bottom/men-bot-1.webp" alt="">
+				<section class="cart-item--details">
+					<section class="name-and-button-wrapper">
+						<div class="name--selected"></div> <!--prod name-->
+						<button class="remove-button"><img class="remove-button-img" src="../../img/trash-can.png" alt="Remove button"></button>
+					</section>
+					<div>Size:&nbsp;<span class="size--selected">S</span></div>
+					<section class="price-and-quantity--cart">
+					<section class="price-wrapper">
+						<div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div> <!--prod price-->
+					</section>
+						<section class="alter-quantity--cart">
+						<section class="button-wrapper">
+							<button class="quantity-button button-less--cart">-</button>
+							<input class="quantity--cart" value="1">
+							<button class="quantity-button button-more--cart">+</button>
+						</section>
+						</section>
+					</section>
+				</section>
+			</div>
+			</template>
+		</section>
+		<section class="cart-footer">
+			<div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
+			<button class="checkout-button">Checkout</button>
+		</section>
+	</aside>
+	<section>
+
+	<!------[Page Menu]------>
+	<section class="page-menu--product title-font">
+	<template id="page-menu-template--product">
+		<nav class="website-path website-path--product">
+			<a href="../index.html">Home</a>&nbsp;/
+			<a class="category-page--product" href=""></a>&nbsp;/
+			<span class="current-page">Black Shorts</span>
+		</nav>
+	</template>
+	</section>
+
+	<!------[Product Page & Details]------>
+	<section class="product-page">
+		<template id="product-page-template">
+		<div class="product-details--wrapper bottom-border">
+			<section class="product-details main-font">
+				<div>
+					<img class="product-img" src="../../img/men-bottom/men-bot-1.webp"> <!--prod img-->
+				</div>
+				<div class="product-info">
+					<h1 class="product-title"></h1> <!--prod name-->
+					<span class="product-price">RM&nbsp;<span class="product-price--value"></span> <!--prod price--></span>
+					<section class="size-interface">
+						<div>Size:&nbsp;&nbsp;<span class="displayed-size"></span></div> <!--size-->
+						<div class="alter-size">
+							<button class="size-button size-s">S</button>
+							<button class="size-button size-m">M</button>
+							<button class="size-button size-l">L</button>
+							<button class="size-button size-xl">XL</button>
+						</div>
+					<section>
+					<article class="product-description">
+						<h3 class="sub-title sub-font">DESCRIPTION</h3>
+						<p class="product-description--text"></p> <!--prod desc-->
+					</article>
+					<article class="product-feature">
+						<h3 class="sub-title sub-font">FEATURES</h3>
+						<p class="product-feature--text"></p> <!--prod feature-->
+					</article>
+					<section class="alter-quantity">
+						<span>Quantity:&nbsp;&nbsp;</span>
+						<button class="quantity-button button-less">-</button>
+						<input class="quantity" value="1">
+						<button class="quantity-button button-more">+</button>
+					</section>
+					<section class="order-interface">
+						<button class="add-to-cart-button">ADD TO CART</button>
+					</section>
+				</div>
+			</section>
+		</div>
+		</template>
+	</section>
+
+
+
+	<!------[Recommended Items]------>
+	<h1 class="main-font recommended-header">You May Also Like</h1>
+	<section class="catalogue">
+		<template id="card-template">
+			<article class="card">
+				<a class="product-page">
+					<img class="card-img">
+				</a>
+				<div class="card-info">
+					<h5 class="card-title"></h5>
+					<span class="card-price">RM&nbsp;<span class="card-price--value"></span></span>
+				</div>
+			</article>
+		</template>
+	</section>
+
+	
+
+	<!------[Navigation Bar (Bottom)]------>
+	<footer>
+	<div class="footer-top">
+		<div class="footer-column">
+			<h4>Shop</h4>
+			<a href="women.html">Women</a>
+			<a href="men.html">Men</a>
+		</div>
+		<div class="footer-column">
+			<h4>About</h4>
+			<a href="../about.html">About Us</a>
+		</div>
+		<div class="footer-column">
+			<h4>Support</h4>
+			<a href="#">FAQs</a>
+			<a href="#">Contact Us</a>
+		</div>
+		<div class="footer-column">
+			<h4>Got a question?</h4>
+			<p>+6016-417-5751</p>
+			<p>fuku@gmail.com</p>
+		</div>
+		<div class="footer-column">
+			<h4>Get updates when you sign up.</h4>
+			<p>Receive the latest updates and more.</p>
+			<div class="newsletter">
+				<input type="email" placeholder="Enter your email">
+				<button>Submit</button>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; 2026 Fuku. All rights reserved.</p>
+	</div>
+</body>
+</html>
