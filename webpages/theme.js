@@ -14,10 +14,10 @@ function loadThemePreference() {
   // If user had dark mode on before, apply it
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
-    updateThemeButton('☀️'); // Show sun icon (switch to light)
+    updateThemeButton('sun'); // Show sun icon (switch to light)
   } else {
     document.body.classList.remove('dark-mode');
-    updateThemeButton('🌙'); // Show moon icon (switch to dark)
+    updateThemeButton('moon'); // Show moon icon (switch to dark)
   }
 }
 
@@ -52,18 +52,26 @@ function toggleTheme() {
   if (isDarkMode) {
     document.body.classList.remove('dark-mode');
     localStorage.setItem('fuku-theme', 'light');
-    updateThemeButton('🌙'); // Show moon (to switch to dark)
+    updateThemeButton('moon'); // Show moon (to switch to dark)
   } else {
     document.body.classList.add('dark-mode');
     localStorage.setItem('fuku-theme', 'dark');
-    updateThemeButton('☀️');
+    updateThemeButton('sun');
   }
 }
 
 // ===== FUNCTION 4: UPDATE THEME BUTTON ICON =====
+// Uses inline SVG (instead of emoji) so the icon can be styled as a solid
+// black/white colour via CSS "fill: currentColor" rather than the OS's
+// built-in colour emoji glyph.
 function updateThemeButton(icon) {
   let themeButton = document.querySelector('.theme-toggle');
-  if (themeButton) {
-    themeButton.textContent = icon;
+  if (!themeButton) {
+    return;
   }
+
+  let sunSvg = '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/></g></svg>';
+  let moonSvg = '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>';
+
+  themeButton.innerHTML = icon === 'sun' ? sunSvg : moonSvg;
 }
