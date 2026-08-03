@@ -30,6 +30,7 @@ function setupStarRatings() {
   stars.forEach(function(star) {
     star.addEventListener('click', function() {
       selectedRating = parseInt(star.dataset.value);
+      window.userSelectedRating = selectedRating;
 
       colorTheStars(selectedRating);
     });

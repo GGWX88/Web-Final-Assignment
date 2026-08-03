@@ -333,6 +333,20 @@ body.dark-mode .nav-toggle .bar {
   opacity: 0.85;
 }
 
+body.dark-mode .product-card h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .product-card .price {
+  color: #b8b8b8;
+}
+
+@media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 /* ===================== Section Divider ===================== */
 .section-divider {
@@ -575,6 +589,18 @@ body.dark-mode .newsletter-msg.error {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .review-layout {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 48px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
  
 .review-form input,
