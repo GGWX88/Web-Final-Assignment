@@ -456,55 +456,6 @@ footer {
   margin-bottom: 8px;
 }
 
-.newsletter {
-  display: flex;
-  margin-top: 12px;
-}
-
-.newsletter input {
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  flex: 1;
-  border-radius: 0;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  background: #4a3b28;
-  color: #fff;
-  border: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-
-.newsletter button:hover {
-  background: #3a2d1e;
-}
-
-.newsletter-msg {
-  font-size: 12px;
-  margin-top: 8px;
-}
-
-.newsletter-msg.success {
-  color: #4a7c23;
-}
-
-.newsletter-msg.error {
-  color: #c0392b;
-}
-
-body.dark-mode .newsletter-msg.success {
-  color: #a3d977;
-}
-
-body.dark-mode .newsletter-msg.error {
-  color: #f5a99a;
-}
-
 .footer-bottom {
   border-top: 1px solid #eee;
   padding: 20px 48px;
