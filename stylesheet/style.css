@@ -4,12 +4,44 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
   background: #fff;
   transition: background 0.2s, color 0.2s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===================== Keyboard Focus (site-wide, WCAG 2.1) ===================== */
+/* Only shows for keyboard navigation, not mouse clicks, and stays
+   consistent across every page instead of relying on browser defaults */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #4a3b28;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+body.dark-mode a:focus-visible,
+body.dark-mode button:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode textarea:focus-visible,
+body.dark-mode [tabindex]:focus-visible {
+  outline-color: #e8d3af;
 }
 /* ================================================= Home ================================================= */
 /* ================================================= Home ================================================= */
@@ -59,6 +91,100 @@ header {
   font-weight: bold;
   border-bottom: 2px solid #4a3b28;
   padding-bottom: 4px;
+}
+
+/* ===================== Mobile Nav Toggle (hamburger) ===================== */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  order: 2;
+}
+
+.nav-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #4a3b28;
+  border-radius: 2px;
+}
+
+.nav-toggle .bar + .bar {
+  margin-top: 6px;
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+body.dark-mode .nav-toggle .bar {
+  background: #e8d3af;
+}
+
+@media (max-width: 720px) {
+  header {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-basis: 100%;
+    order: 3;
+    text-align: left;
+    background: #e8d3af;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 24px 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+  }
+
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(74, 59, 40, 0.15);
+  }
+
+  .main-nav a.active {
+    border-bottom: 1px solid rgba(74, 59, 40, 0.15);
+  }
+
+  body.dark-mode .main-nav {
+    background: #2d2d2d;
+  }
+
+  body.dark-mode .main-nav a {
+    border-bottom-color: rgba(232, 211, 175, 0.15);
+  }
+
+  body.dark-mode .main-nav a.active {
+    border-bottom-color: rgba(232, 211, 175, 0.15);
+  }
 }
 
 /* ===================== Hero ===================== */
@@ -218,6 +344,20 @@ header {
   opacity: 0.85;
 }
 
+body.dark-mode .product-card h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .product-card .price {
+  color: #b8b8b8;
+}
+
+@media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 /* ===================== Section Divider ===================== */
 .section-divider {
@@ -316,34 +456,6 @@ footer {
   margin-bottom: 8px;
 }
 
-.newsletter {
-  display: flex;
-  margin-top: 12px;
-}
-
-.newsletter input {
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  flex: 1;
-  border-radius: 0;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  background: #4a3b28;
-  color: #fff;
-  border: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-
-.newsletter button:hover {
-  background: #3a2d1e;
-}
-
 .footer-bottom {
   border-top: 1px solid #eee;
   padding: 20px 48px;
@@ -439,6 +551,18 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .review-layout {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 48px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
  
 .review-form input,
@@ -542,6 +666,31 @@ footer {
   border: 1px solid #f0c4bc;
 }
 
+body.dark-mode .form-msg.success {
+  background: #223a22;
+  color: #a3d977;
+  border-color: #335a33;
+}
+
+body.dark-mode .form-msg.error {
+  background: #3a2222;
+  color: #f5a99a;
+  border-color: #5a3330;
+}
+
+body.dark-mode .form-msg.warning {
+  background: #3a3322;
+  color: #f5cf7a;
+  border-color: #5a4f30;
+}
+
+.form-msg.warning {
+  display: block;
+  background: #fdf6ec;
+  color: #b8860b;
+  border: 1px solid #f0dcb0;
+}
+
 /* ===================== Empty State ===================== */
 .no-reviews {
   background: #f5efe6;
@@ -626,9 +775,107 @@ footer {
 /* ================================================= Review ================================================= */
 
 
-/* ================================================= Register ================================================= */
-/* ================================================= Register ================================================= */
-/* ================================================= Register ================================================= */
+/* ================================================= Multi-Step Registration ================================================= */
+/* ================================================= Multi-Step Registration ================================================= */
+/* ================================================= Multi-Step Registration ================================================= */
+
+.progress-container {
+  max-width: 550px;
+  margin: 40px auto 20px;
+  padding: 0 30px;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 14px;
+  color: #8a7a62;
+  margin-bottom: 8px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: #e0d4bf;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #4a3b28;
+  width: 33%;
+  transition: width 0.3s ease;
+}
+
+body.dark-mode .progress-bar-bg {
+  background: #444;
+}
+
+body.dark-mode .progress-bar {
+  background: #e8d3af;
+}
+
+body.dark-mode .progress-text {
+  color: #aaa;
+}
+
+.step-1, .step-2, .step-3 {
+  display: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.btn-prev, .btn-next, .btn-submit {
+  background: #4a3b28;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.btn-prev:hover, .btn-next:hover, .btn-submit:hover {
+  background: #3a2d1e;
+}
+
+body.dark-mode .btn-prev,
+body.dark-mode .btn-next,
+body.dark-mode .btn-submit {
+  background: #e8d3af;
+  color: #1a1a1a;
+}
+
+body.dark-mode .btn-prev:hover,
+body.dark-mode .btn-next:hover,
+body.dark-mode .btn-submit:hover {
+  background: #fff;
+}
+
+.step-title {
+  color: #4a3b28;
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+body.dark-mode .step-title {
+  color: #e8d3af;
+}
+
+/* ================================================= Member Forms (Register & Login) ================================================= */
+/* ================================================= Member Forms (Register & Login) ================================================= */
+/* ================================================= Member Forms (Register & Login) ================================================= */
+/* Shared by register.html and login.html so both forms look and behave identically */
 
 .form-section{
     max-width:550px;
@@ -713,7 +960,7 @@ form button:hover{
 }
 
 .form-link{
-    margin-top:8px;
+    margin-top:20px;
     text-align:center;
     font-size:14px;
 }
@@ -747,112 +994,6 @@ form button:hover{
     width: 16px;
     height: 16px;
 }
-/* ================================================= Register ================================================= */
-/* ================================================= Register ================================================= */
-/* ================================================= Register ================================================= */
-
-/* ================================================= Login ================================================= */
-/* ================================================= Login ================================================= */
-/* ================================================= Login ================================================= */
-
-.form-section{
-    max-width:500px;
-    margin:80px auto;
-    padding:0 30px;
-    text-align:center;
-}
-
-.form-section h2{
-    font-family:'Montserrat', sans-serif;
-    font-size:34px;
-    font-weight:400;
-    letter-spacing:3px;
-    color:#4a3b28;
-    margin-bottom:10px;
-}
-
-.form-section > p{
-    color:#8a7a62;
-    margin-bottom:35px;
-    font-size:15px;
-}
-
-form{
-    background:#fff;
-    border:1px solid #e0d4bf;
-    border-radius:10px;
-    padding:40px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.05);
-}
-
-form label{
-    display:block;
-    text-align:left;
-    margin-top:20px;
-    margin-bottom:8px;
-    font-family:'Montserrat', sans-serif;
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:#4a3b28;
-}
-
-form input{
-    width:92%;
-    margin: auto;
-    display: block;
-    padding:16px;
-    border:1px solid #d8c9ad;
-    border-radius:6px;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-}
-
-form input::placeholder{
-    color:#b1a48d;
-}
-
-form input:focus{
-    outline:none;
-    border-color:#4a3b28;
-    box-shadow:0 0 0 3px rgba(74,59,40,.1);
-}
-
-form button{
-    width:100%;
-    margin-top:30px;
-    padding:15px;
-    background:#4a3b28;
-    color:#fff;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-family:'Montserrat', sans-serif;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:13px;
-}
-
-form button:hover{
-    background:#3a2d1e;
-}
-
-.form-link{
-    text-align:center;
-    margin-top:25px;
-    font-size:14px;
-}
-
-.form-link a{
-    color:#4a3b28;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.form-link a:hover{
-    text-decoration:underline;
-}
 
 .checkbox-login {
     display: flex;
@@ -878,9 +1019,49 @@ form button:hover{
     flex-shrink:0;
 }
 
-/* ================================================= Login ================================================= */
-/* ================================================= Login ================================================= */
-/* ================================================= Login ================================================= */
+/* ===================== Success State (Login / Register) ===================== */
+.success-box {
+  text-align: center;
+  padding: 60px 30px;
+  background: #f5efe6;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.success-box h2 {
+  color: #4a3b28;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.success-box p {
+  color: #8a7a62;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.success-box .shop-button {
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body.dark-mode .success-box {
+  background: #2d2d2d;
+}
+
+body.dark-mode .success-box h2 {
+  color: #e8d3af;
+}
+
+body.dark-mode .success-box p {
+  color: #ccc;
+}
+
+/* ================================================= Member Forms (Register & Login) ================================================= */
+/* ================================================= Member Forms (Register & Login) ================================================= */
+/* ================================================= Member Forms (Register & Login) ================================================= */
 
 /* ================================================= About ================================================= */
 /* ================================================= About ================================================= */
@@ -949,6 +1130,30 @@ form button:hover{
   font-size: 16px;
   color: #4a3b28;
   line-height: 1.9;
+}
+
+/* Dark mode: fade into the dark background colour instead of white,
+   and lighten the text so it still reads over the darker fade */
+body.dark-mode .about-banner::before {
+  background: linear-gradient(
+    to right,
+    #1a1a1a 0%,
+    rgba(26, 26, 26, 0.92) 28%,
+    rgba(26, 26, 26, 0.55) 48%,
+    rgba(26, 26, 26, 0) 70%
+  );
+}
+
+body.dark-mode .aboutbanner-content h2 {
+  color: #e8d3af;
+}
+
+body.dark-mode .aboutbanner-tagline {
+  color: #cbb996;
+}
+
+body.dark-mode .aboutbanner-description {
+  color: #e0e0e0;
 }
 
 /* ===================== About sections ===================== */
@@ -1131,6 +1336,14 @@ form button:hover{
       rgba(255, 255, 255, 0.35) 100%
     );
   }
+  body.dark-mode .about-banner::before {
+    background: linear-gradient(
+      to right,
+      #1a1a1a 0%,
+      rgba(26, 26, 26, 0.9) 55%,
+      rgba(26, 26, 26, 0.35) 100%
+    );
+  }
   .aboutbanner-content { margin-left: 0; max-width: 100%; }
   .aboutbanner-content h2 { font-size: 30px; }
 }
@@ -1138,6 +1351,16 @@ form button:hover{
 /* ===================== Team cards (About page) ===================== */
 .team-grid {
   grid-template-columns: repeat(4, 1fr);
+}
+
+/* Show the whole photo instead of cropping/zooming into it */
+.team-grid img {
+  object-fit: contain;
+  background: #faf6ee;
+}
+
+body.dark-mode .team-grid img {
+  background: #2d2d2d;
 }
 
 /* make the whole card clickable while keeping the card styling */
@@ -1206,4 +1429,326 @@ form button:hover{
 .member-back:hover {
   background: #4a3b28;
   color: #fff;
+}
+
+/* ===================== THEME TOGGLE BUTTON ===================== */
+.theme-toggle {
+  background: #fff;
+  border: 2px solid #4a3b28;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+  color: #000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .theme-toggle {
+  background: #2d2d2d;
+  border-color: #e8d3af;
+  color: #fff;
+}
+
+/* ===================== DARK MODE STYLES ===================== */
+body.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background: #2d2d2d;
+}
+
+body.dark-mode .logo {
+  color: #e8d3af;
+}
+
+body.dark-mode .main-nav a {
+  color: #e8d3af;
+}
+
+body.dark-mode .main-nav a:hover {
+  color: #fff;
+}
+
+body.dark-mode .main-nav a.active {
+  border-bottom-color: #e8d3af;
+}
+
+body.dark-mode .banner-text h1 {
+  color: #fff;
+}
+
+body.dark-mode .banner-text p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .shop-button {
+  background: #e8d3af;
+  color: #1a1a1a;
+}
+
+body.dark-mode .shop-button:hover {
+  background: #fff;
+}
+
+body.dark-mode .category-card {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .feat-title {
+  color: #e8d3af;
+}
+
+body.dark-mode .product-card {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-mode .product-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}
+
+body.dark-mode h2 {
+  color: #e8d3af;
+}
+
+body.dark-mode .form-section h2 {
+  color: #e8d3af;
+}
+
+body.dark-mode .form-section p {
+  color: #aaa;
+}
+
+body.dark-mode form {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
+body.dark-mode form label {
+  color: #e8d3af;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode form input:focus,
+body.dark-mode form textarea:focus {
+  border-color: #e8d3af;
+}
+
+body.dark-mode form button {
+  background: #e8d3af;
+  color: #1a1a1a;
+}
+
+body.dark-mode form button:hover {
+  background: #fff;
+}
+
+body.dark-mode .form-link {
+  color: #aaa;
+}
+
+body.dark-mode .form-link a {
+  color: #e8d3af;
+}
+
+body.dark-mode footer {
+  background: #2d2d2d;
+  border-top-color: #444;
+}
+
+body.dark-mode footer h4 {
+  color: #e8d3af;
+}
+
+body.dark-mode footer a {
+  color: #aaa;
+}
+
+body.dark-mode footer p {
+  color: #aaa;
+}
+
+body.dark-mode .review-item {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
+body.dark-mode .review-header-item strong {
+  color: #e8d3af;
+}
+
+body.dark-mode .review-text {
+  color: #aaa;
+}
+
+/* Review page: remaining elements that weren't dark-mode aware */
+body.dark-mode .col-title {
+  border-bottom-color: #444;
+}
+
+body.dark-mode .star-input label {
+  color: #e8d3af;
+}
+
+body.dark-mode .char-count {
+  color: #777;
+}
+
+body.dark-mode .review-note {
+  color: #777;
+}
+
+body.dark-mode .no-reviews {
+  background: #2d2d2d;
+}
+
+body.dark-mode .no-reviews-title {
+  color: #e8d3af;
+}
+
+body.dark-mode .no-reviews-text {
+  color: #999;
+}
+
+/* About page: content sections still had light cream backgrounds in dark mode */
+body.dark-mode .about-row {
+  background: #2d2d2d;
+  border-color: #444;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .about-eyebrow {
+  color: #b8a888;
+}
+
+body.dark-mode .about-text h2 {
+  color: #e8d3af;
+}
+
+body.dark-mode .about-text h2::after {
+  background: #e8d3af;
+}
+
+body.dark-mode .about-text p {
+  color: #ccc;
+}
+
+body.dark-mode .about-points li {
+  color: #ccc;
+}
+
+body.dark-mode .about-points li::before {
+  color: #e8d3af;
+}
+
+body.dark-mode .about-list li {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
+body.dark-mode .about-list li:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .about-list span {
+  color: #e8d3af;
+}
+
+body.dark-mode .about-section h2 {
+  color: #e8d3af;
+}
+
+/* Member/portfolio profile pages (reused across all 4 portfolio pages) */
+body.dark-mode .member-profile h1 {
+  color: #e8d3af;
+}
+
+body.dark-mode .member-role {
+  color: #b8a888;
+}
+
+body.dark-mode .member-bio {
+  color: #ccc;
+}
+
+body.dark-mode .member-back {
+  color: #e8d3af;
+  border-color: #e8d3af;
+}
+
+body.dark-mode .member-back:hover {
+  background: #e8d3af;
+  color: #1a1a1a;
+}
+
+/* ===================== Review Items (JavaScript Generated) ===================== */
+.review-item {
+  background: #fff;
+  border: 1px solid #e0d4bf;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 16px;
+  animation: slideUp 0.4s ease;
+}
+
+.review-header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.review-header-item strong {
+  font-size: 15px;
+  color: #4a3b28;
+}
+
+.review-date {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.review-rating {
+  color: #fbbf24;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.review-text {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
