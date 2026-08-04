@@ -1,0 +1,97 @@
+/*------[Page Menu]------*/
+.page-menu {
+	padding: 20px 0;
+	min-height: 180px;
+	height: auto;
+	background-color: #f7f7f7;
+}
+.page-menu a {
+	text-decoration: none;
+	color: gray;
+}
+.bottom-border {
+	border-bottom: 1px solid #c0c0c0;
+}
+.website-path {
+	padding: 0 0 0 2%;
+	font-size: 14px;
+}
+.current-page {
+	font-weight: bold;
+}
+.page-name {
+	text-align: center;
+	font-family: 'Manrope', sans-serif;
+	font-size: 50px;
+	margin: 20px 0 0 0;
+}
+
+/*------[Product Cards]------*/
+.catalogue {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	max-width: 95vw;
+	margin: 0 auto;
+	padding: 40px 20px 10vh 20px;
+}
+.card {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.card-img {
+	width: 100%;
+	aspect-ratio: 3/4;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+}
+.card-info {
+	padding-top: 10px;
+	padding-left: 0;
+}
+.card-title {
+	font-weight: normal;
+	font-size: 18px;
+	font-family: 'Hanken Grotesk', sans-serif;
+	margin: 4px 0;
+}
+.card-price {
+	display: block;
+	font-size: 14px;
+	color: grey;
+}
+
+/* ==========================================
+   Responsive Breakpoints (Mobile & Tablet)
+   ========================================== */
+
+/* Tablet Viewport */
+@media screen and (max-width: 1024px) {
+	.catalogue {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+	.page-name {
+		font-size: 38px;
+	}
+}
+
+/* Mobile Viewport */
+@media screen and (max-width: 768px) {
+	.catalogue {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+		padding: 20px 12px 60px 12px;
+	}
+	.page-name {
+		font-size: 28px;
+	}
+	.website-path {
+		padding: 0 0 0 4%;
+		font-size: 12px;
+	}
+}

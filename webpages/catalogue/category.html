@@ -5,75 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Men Bottom — Fuku</title>
 	<link rel="stylesheet" href="../../stylesheet/style.css">
+	<link rel="stylesheet" href="./new-cart.css">
+	<link rel="stylesheet" href="./new-search.css">
+	<link rel="stylesheet" href="./new-category.css">
 	<link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-	<style>
-	/*------page menu------*/
-		.page-menu {
-			padding: 1.1% 0 0.4% 0;
-			height: 25vh;
-			a {
-				text-decoration: none;
-				color: gray;
-			}
-			background-color: #f7f7f7;
-		}
-		.bottom-border {
-			border-bottom: 1px solid #c0c0c0;
-		}
-		.website-path {
-			padding: 0 0 0 2%;
-			font-size: 14px;
-		}
-		.current-page {
-			font-weight: bold;
-		}
-		.page-name {
-			text-align: center;
-			font-family: 'Manrope';
-			font-size: 50px;
-		}
+	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-	/*------cards------*/
-		.catalogue {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			padding-bottom: 10vh;
-		}
-		.card {
-			width: 23vw;
-			padding-top: 2vh;
-			padding-bottom: 2vh;
-			float: left;
-			display: flex;
-			flex-direction: column;
-		}
-		.card-img {
-			width: 90%;
-			object-fit: cover;
-			display: block;
-			margin: 0 auto;
-		}
-		.card-info {
-			padding-top: 1%;
-			padding-left: 7%;
-		}
-		.card-title {
-			font-weight: normal;
-			font-size: 20px;
-			font-family: 'Hanken Grotesk';
-		}
-		.card-price {
-			display: block;
-			font-size: 13px;
-			color: grey;
-		}
-	</style>
 	<script defer src="./database.js"></script>
 	<script defer src="./category.js"></script>
+	<script defer src="./search.js"></script>
+	<script defer src="./cart.js"></script>
 </head>
 <body>
 	<!------[Navigation Bar (Top)]------>
@@ -86,7 +30,74 @@
 			<a href="../review.html">Review</a>
 			<a href="../login.html">Member</a>
 		</nav>
+
+		<button id="search-toggle-btn" class="search-btn"><img class="search-btn-img" src="../../img/search-icon.png" alt="A magnifying glass"></button>
+		<button class="cart-button"><img class="cart-button-img" src="../../img/shopping-cart-black.png" alt="An image for a shopping cart"></button>
 	</header>
+
+	<!------[Dropdown Search Menu]------>
+	<div id="search-dropdown" class="search-dropdown hidden">
+		<div class="search-input-wrapper">
+			<input id="search-input" type="text" placeholder="Search our products..." autocomplete="off" >
+		</div>
+		<div id="search-results" class="search-results">
+		</div>
+	</div>
+
+	<!--[Shopping Cart]-->
+	<section class="shopping-cart">
+		<div class="cart-overlay active"></div>
+
+		<aside class="cart-list">
+			<section class="cart-header">
+				<div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div> <!--add JS for this-->
+				<button class="close-button"><img class="close-button-img" src="../../img/close-icon.png" alt="A close button"></button> <!--image here-->
+			</section>
+			<section class="cart-all-items">
+				<!--[Shopping Cart Items]-->
+				<template id="cart-item-template">
+				<div class="cart-item" data-id=""> 
+					<img class="cart-item--img" src="" alt="">
+					<section class="cart-item--details">
+						<section class="name-and-button-wrapper">
+							<div class="name--selected"></div> <!--prod name-->
+							<button class="remove-button"><img class="remove-button-img" src="../../img/trash-can.png" alt="Remove button"></button> <!--image here-->
+						</section>
+						<div>Size:&nbsp;<span class="size--selected">S</span></div>
+						<section class="price-and-quantity--cart">
+						<section class="price-wrapper">
+							<div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div> <!--prod price-->
+						</section>
+							<section class="alter-quantity--cart">
+							<section class="button-wrapper">
+								<button class="quantity-button button-less--cart">-</button>
+								<input class="quantity--cart" value="1">
+								<button class="quantity-button button-more--cart">+</button>
+							</section>
+							</section>
+						</section>
+					</section>
+				</div>
+				</template>
+			</section>
+			<section class="cart-footer">
+				<div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
+				<button class="checkout-button">Checkout</button>
+			</section>
+		</aside>
+
+        <!------["Order Placed Pop Up"]------>
+        <div class="modal-backdrop hide-popup--order-placed">
+            <div class="modal-box">
+                <img class="tick-img" src="../../img/green-tick.png" alt="Green Tick">
+                <h3 class="modal-title">Order Placed</h3>
+                <p class="modal-description">
+                    Thank you for your purchase. Please come again!
+                </p>
+                <button class="modal-button">Continue Shopping</button>
+            </div>
+        </div>
+	<section>
 
 	<!------[Page Menu]------>
 	<section class="page-menu bottom-border">

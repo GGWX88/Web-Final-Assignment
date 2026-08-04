@@ -20,6 +20,8 @@ document.querySelector(".page-menu--product").appendChild(clone);
 template = document.getElementById("product-page-template");
 clone = template.content.cloneNode(true);
 clone.querySelector(".product-img").src = productCategories[categoryNum][itemNum].image;
+clone.querySelector(".product-img").alt = productCategories[categoryNum][itemNum].name;
+clone.querySelector(".product-img").title = productCategories[categoryNum][itemNum].name;
 clone.querySelector(".product-title").innerHTML = productCategories[categoryNum][itemNum].name;
 clone.querySelector(".product-price--value").innerHTML = productCategories[categoryNum][itemNum].price;
 
@@ -37,17 +39,17 @@ buttonLarge = document.querySelector(".size-l");
 buttonXLarge = document.querySelector(".size-xl");
 
 const buttonList = [
-	[buttonSmall, "Small", "S"],
-	[buttonMedium, "Medium", "M"],
-	[buttonLarge, "Large", "L"],
-	[buttonXLarge, "Extra Large", "XL"]
+	buttonSmall,
+	buttonMedium,
+	buttonLarge,
+	buttonXLarge
 ];
 
 let chosenSize;		//identified size
 
 chosenSize = 0;		//default size == "S"
-buttonList[0][0].classList.add("size-button--on");	//default selected button == "S"
-displayedSize.innerHTML = buttonList[0][1];	//default displayed size == "Small"
+buttonList[0].classList.add("size-button--on");	//default selected button == "S"
+displayedSize.innerHTML = sizes[0][0];	//default displayed size == "Small"
 
 function toggleSize(sizeClicked)
 {
@@ -58,12 +60,12 @@ function toggleSize(sizeClicked)
 	{
 		if (counter != sizeClicked) //if not chosen size 
 		{
-			buttonList[counter][0].classList.remove("size-button--on");
+			buttonList[counter].classList.remove("size-button--on");
 		}
 		else //if chosen size
 		{
-			buttonList[counter][0].classList.add("size-button--on");
-			displayedSize.innerHTML = buttonList[sizeClicked][1]; //add size name
+			buttonList[counter].classList.add("size-button--on");
+			displayedSize.innerHTML = sizes[sizeClicked][0]; //add size name
 			chosenSize = sizeClicked; //record chosen size (for JSON)
 		}
 		counter++;
@@ -88,37 +90,34 @@ let chosenQuantity = 1; //identified quantity
 let newQuantity;
 
 more.addEventListener("click", () => {
-		newQuantity = Number(displayedQuantity.value) + 1;
-		displayedQuantity.value = newQuantity;
-		chosenQuantity = Number(displayedQuantity.value);
-	}
-);
+	newQuantity = Number(displayedQuantity.value) + 1;
+	displayedQuantity.value = newQuantity;
+	chosenQuantity = Number(displayedQuantity.value);
+});
 
 // Decrease item quantity
 less.addEventListener("click", () => {
-		if (Number(displayedQuantity.value) > 1)
-		{
-			newQuantity = Number(displayedQuantity.value) - 1;
-			displayedQuantity.value = newQuantity;
-			chosenQuantity = displayedQuantity.value;
-		}
+	if (Number(displayedQuantity.value) > 1)
+	{
+		newQuantity = Number(displayedQuantity.value) - 1;
+		displayedQuantity.value = newQuantity;
+		chosenQuantity = Number(displayedQuantity.value);
 	}
-);
+});
 
 // Display item quantity
 displayedQuantity.addEventListener("change", () => {
-		if (Number(displayedQuantity.value) === 0)
-			displayedQuantity.value = 1;
-		else if (!(Number(displayedQuantity.value) >= 0))
-			displayedQuantity.value = 1;
-		else if (Number.isNaN(Number(displayedQuantity.value)))
-			displayedQuantity.value = 1;
-		chosenQuantity = displayedQuantity.value;
-	}
-);
+	if (Number(displayedQuantity.value) === 0)
+		displayedQuantity.value = 1;
+	else if (!(Number(displayedQuantity.value) >= 0))
+		displayedQuantity.value = 1;
+	else if (Number.isNaN(Number(displayedQuantity.value)))
+		displayedQuantity.value = 1;
+	chosenQuantity = Number(displayedQuantity.value);
+});
 
 
-/*------[Add To Cart]------*/ //should work fine now
+/*------[Add To Cart]------*/
 addToCartButton = document.querySelector(".add-to-cart-button");
 
 // When add to cart button is clicked
@@ -141,7 +140,7 @@ addToCartButton.addEventListener("click", () => {
 			itemToBeModified.querySelector(".quantity--cart").value = newQuantity;
 
 			// Calculate the new total price of cart item
-			itemToBeModified.querySelector(".price-total--selected").innerHTML = newQuantity * productCategories[categoryNum][itemNum].price;
+			itemToBeModified.querySelector(".price-total--selected").innerHTML = (newQuantity * productCategories[categoryNum][itemNum].price).toFixed(2);
 
 			// Then update localStorage
 			cartItems[i].quantity = newQuantity;
@@ -162,9 +161,24 @@ addToCartButton.addEventListener("click", () => {
 		// Update localStorage
 		cartItems.push({id : generatedId, category : categoryNum, item : itemNum, size : chosenSize, quantity : chosenQuantity});
 		saveChangesToStorage();
+
+		// Update number of items in cart
+		changeNumberOfCartItems();
 	}
 
-	//popup
+	// Calculate new subtotal
+	calculateSubtotal();
+
+	// Display "Item Added" pop up
+	let timer;
+
+	itemAddedPopup = document.querySelector(".item-added-popup");
+	itemAddedPopup.classList.remove("hide-pop-up");
+
+	clearTimeout(timer);
+	timer = setTimeout(() => {
+		itemAddedPopup.classList.add("hide-pop-up");
+	}, 4000);
 });
 
 
@@ -182,7 +196,7 @@ for (let i = 0; i < 4; i++)
 
 	// Display randomized item
 	clone = template.content.cloneNode(true);
-	clone.querySelector(".product-page").setAttribute("href", `product.html?name=\"${productCategories[randCategory][i][1]}\"`)
+	clone.querySelector(".product-page").setAttribute("href", `product.html?category=${randCategory}&item=${randItem}`);
 	clone.querySelector(".card-img").setAttribute("src", productCategories[randCategory][randItem].image);
 	clone.querySelector(".card-img").setAttribute("alt", productCategories[randCategory][randItem].name);
 	clone.querySelector(".card-img").setAttribute("title", productCategories[randCategory][randItem].name);

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout Modal Test</title>
+	<style>
+		/* --- BACKDROP COVERING THE SCREEN --- */
+		.tick-img {
+			width: 10vw;
+			padding-bottom: 2%;
+		}
+		.modal-backdrop {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+			
+			/* Center children horizontally and vertically */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			z-index: 10000;
+		}
+
+		/* --- THE CENTERED MODAL BOX --- */
+		.modal-box {
+			background-color: #ffffff;
+			width: 90%;
+			max-width: 420px; /* Fits nicely on mobile and desktop */
+			padding: 28px 24px;
+			border-radius: 12px;
+			border: 1px solid #e5e7eb;
+			box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+		.modal-title {
+			margin: 0 0 8px 0;
+			font-size: 20px;
+			font-weight: 600;
+			color: #111827;
+		}
+		.modal-description {
+			margin: 0 0 20px 0;
+			font-size: 16px;
+			color: #6b7280;
+			line-height: 1.5;
+		}
+		.modal-button {
+			width: 100%;
+			padding: 10px 16px;
+			background-color: black;
+			color: white;
+			font-size: 14px;
+			font-weight: 500;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			&:active {
+				color: #D3D3D3;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Modal Component (Hidden by default) -->
+<div class="modal-backdrop">
+	<div class="modal-box">
+		<img class="tick-img" src="../../img/green-tick.png" alt="Green Tick">
+		<h3 class="modal-title">Order Placed!</h3>
+		<p class="modal-description">
+			Thank you for your purchase. Please come again!
+		</p>
+		<button class="modal-button">Continue Shopping</button>
+	</div>
+</div>
+</body>
+</html>
