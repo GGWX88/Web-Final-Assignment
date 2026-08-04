@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register — Fuku</title>
+  <title>Portfolio — Jack | Fuku</title>
   <link rel="stylesheet" href="../stylesheet/style.css">
+  <link rel="stylesheet" href="../stylesheet/portfolio.css">
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <script defer src="../js/database.js"></script>
   <script defer src="../js/search.js"></script>
@@ -25,6 +25,7 @@
       <a href="about.html">About</a>
       <a href="review.html">Review</a>
       <a href="login.html">Member</a>
+      <a href="teampage.html">Team</a>
     </nav>
     <div class="header-actions">
         <button id="search-toggle-btn" class="search-btn">
@@ -100,92 +101,60 @@
         </div>
 	<section>
 
-  <section class="form-section">
-    <h2>Create an Account</h2>
-    <p>Join Fuku today and enjoy exclusive fashion collections.</p>
+  <main>
+    <div class="profile-grid">
+      <img src="../img/team/TeohZhiJie.jpg" alt="Teoh Zhi Jie">
+      <div class="bio">
+        <h2>Teoh Zhi Jie</h2>
+        <p><em>Software Engineering Undergraduate</em></p>
+        <p>Teoh Zhi Jie specializes in front-end development and creative design. He focuses on building responsive layouts,
+          interactive features, and ensuring smooth user experiences.</p>
 
-    <!-- Progress Bar -->
-    <div class="progress-container">
-      <div class="progress-text">Step <span class="progress-text">1 / 3</span></div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar"></div>
+        <h3>Education</h3>
+        <ul>
+          <li>Bachelor of Software Engineering (Hons), Sunway University — Sep 2025 – Aug 2028 (expected)</li>
+          <li>GCE A Levels (Pre-University), DISTED College, Penang — 2023–2025</li>
+          <li>Secondary Education (Science Stream), Chung Ling High School, Penang — 2018–2022</li>
+        </ul>
+
+
+        <div class="skills">
+          <h3>Technical Skills</h3>
+          <div class="skill">
+            <div class="skill-name">HTML & CSS</div>
+            <div class="progress">
+              <div class="progress-bar html" style="--level: 69%"><span>69%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="progress">
+              <div class="progress-bar js" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 60%"><span>60%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects">
+          <div class="project-card">
+            <h4>Student Records Management System</h4>
+            <p>Python console app managing students/courses/grades with file I/O and data persistence.</p>
+          </div>
+          <div class="project-card">
+            <h4>Clothing Brand Website</h4>
+            <p>Designing and building a multi-page, responsive website using HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+
+        <a href="files/Teoh_Zhi_Jie_CV.pdf" download="TeohZhiJie_CV.pdf" class="cv-button">Download CV</a>
       </div>
     </div>
-
-    <!-- Message Box -->
-    <div class="form-msg"></div>
-
-    <!-- Registration Form -->
-    <form>
-
-      <!-- STEP 1: PERSONAL INFORMATION -->
-      <div class="step-1">
-        <h3 class="step-title">Step 1: Personal Information</h3>
-
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" placeholder="Enter your full name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="+60..." required>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-next">Next →</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: PASSWORD -->
-      <div class="step-2">
-        <h3 class="step-title">Step 2: Create Password</h3>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Create a password (min 6 characters)" required>
-
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm password" required>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-prev">← Back</button>
-          <button type="button" class="btn-next">Next →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: PREFERENCES & AGREEMENT -->
-      <div class="step-3">
-        <h3 class="step-title">Step 3: Preferences & Agreement</h3>
-
-        <div class="checkbox-group" style="margin-bottom: 20px;">
-          <input type="checkbox" id="agreeTerms" required>
-          <label for="agreeTerms">
-            I have read and agree to the <strong>Terms & Conditions</strong> and <strong>Privacy Policy</strong>
-          </label>
-        </div>
-
-        <div class="checkbox-group">
-          <input type="checkbox" id="newsletter">
-          <label for="newsletter">
-            I want to receive updates, promotions, and fashion tips from Fuku
-          </label>
-        </div>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-prev">← Back</button>
-          <button type="button" class="btn-submit">Complete Registration</button>
-        </div>
-      </div>
-
-      <p class="form-link" style="margin-top: 24px;">
-        Already have an account?
-        <a href="login.html">Login Here</a>
-      </p>
-
-    </form>
-  </section>
-
-  <script src="../js/messages.js"></script>
-  <script src="../js/register.js"></script>
+  </main>
 
   <footer>
     <div class="footer-top">
@@ -214,4 +183,5 @@
     </div>
   </footer>
 </body>
+
 </html>

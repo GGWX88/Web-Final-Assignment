@@ -25,7 +25,7 @@ const categoryNames = [
 
 
 //men top
-menTopPath = "../../img/men-top/";
+menTopPath = "../img/men-top/";
 menTopIDHead = "men-top-";
 menTopExtn = ".webp"
 const menTop = [
@@ -46,7 +46,7 @@ const menTop = [
 
 
 //men bottom
-menBotPath = "../../img/men-bottom/";
+menBotPath = "../img/men-bottom/";
 menBotIDHead = "men-bot-";
 menBotExtn = ".webp"
 const menBottom = [
@@ -66,7 +66,7 @@ const menBottom = [
 
 
 //men outerwear
-menOutPath = "../../img/men-outerwear/";
+menOutPath = "../img/men-outerwear/";
 menOutIDHead = "men-out-";
 menOutExtn = ".webp"
 const menOuterwear = [
@@ -87,7 +87,7 @@ const menOuterwear = [
 
 
 //women top
-womenTopPath = "../../img/women-top/";
+womenTopPath = "../img/women-top/";
 womenTopIDHead = "women-top-";
 womenTopExtn = ".webp"
 const womenTop = [
@@ -108,7 +108,7 @@ const womenTop = [
 
 
 //women bottom
-womenBotPath = "../../img/women-bottom/";
+womenBotPath = "../img/women-bottom/";
 womenBotIDHead = "women-bot-";
 womenBotExtn = ".webp"
 const womenBottom = [
@@ -128,7 +128,7 @@ const womenBottom = [
 
 
 //women dress
-womenDrsPath = "../../img/women-dress/";
+womenDrsPath = "../img/women-dress/";
 womenDrsIDHead = "women-drs-";
 womenDrsExtn = ".webp"
 const womenDress = [
@@ -149,7 +149,7 @@ const womenDress = [
 
 
 //women skirt
-womenSktPath = "../../img/women-skirt/";
+womenSktPath = "../img/women-skirt/";
 womenSktIDHead = "women-skt-";
 womenSktExtn = ".webp"
 const womenSkirt = [

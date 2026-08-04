@@ -243,7 +243,7 @@ checkoutButton.addEventListener("click", () => {
 		// Calculate subtotal (RM 0.00)
 		calculateSubtotal();
 
-		//popup
+		// Display Pop up
 		let orderPlacedPopup = document.querySelector(".modal-backdrop");
 		orderPlacedPopup.classList.remove("hide-popup--order-placed");
 

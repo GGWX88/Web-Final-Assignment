@@ -17,7 +17,10 @@ function setupMobileNav() {
   toggleButton.setAttribute('aria-expanded', 'false');
   toggleButton.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
 
-  header.insertBefore(toggleButton, nav);
+  //header.insertBefore(toggleButton, nav);
+	let actionsWrapper = document.querySelector('.header-actions') || header;
+	actionsWrapper.appendChild(toggleButton);
+	//
 
   toggleButton.addEventListener('click', function() {
     let isOpen = nav.classList.toggle('open');

@@ -4,35 +4,39 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="../../stylesheet/style.css">
-	<link rel="stylesheet" href="./new-cart.css">
-	<link rel="stylesheet" href="./new-search.css">
-	<link rel="stylesheet" href="./new-category.css">
-	<link rel="stylesheet" href="./new-product.css">
-	<link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
+	<link rel="stylesheet" href="../stylesheet/style.css">
+	<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<script defer src="./database.js"></script>
-	<script defer src="./search.js"></script>
-	<script defer src="./cart.js"></script>
-	<script defer src="./product.js"></script>
+	<script defer src="../js/database.js"></script>
+	<script defer src="../js/search.js"></script>
+	<script defer src="../js/cart.js"></script>
+	<script defer src="../js/product.js"></script>
+	<script defer src="../js/theme.js"></script> <!--added-->
+	<script defer src="../js/nav.js"></script> <!--added-->
 </head>
 <body>
 	<!------[Navigation Bar (Top)]------>
 	<header>
-		<a href="../index.html" class="logo">Fuku</a>
+		<a href="index.html" class="logo">Fuku</a>
 		<nav class="main-nav">
-			<a href="../index.html">Home</a>
-			<a href="../catalogue.html" class="active">Catalogue</a>
-			<a href="../about.html">About</a>
-			<a href="../review.html">Review</a>
-			<a href="../login.html">Member</a>
+			<a href="index.html">Home</a>
+			<a href="catalogue.html" class="active">Catalogue</a>
+			<a href="about.html">About</a>
+			<a href="review.html">Review</a>
+			<a href="login.html">Member</a>
 		</nav>
 
-		<button id="search-toggle-btn" class="search-btn"><img class="search-btn-img" src="../../img/search-icon.png" alt="A magnifying glass"></button>
-		<button class="cart-button"><img class="cart-button-img" src="../../img/shopping-cart-black.png" alt="An image for a shopping cart"></button>
+		<div class="header-actions">
+			<button id="search-toggle-btn" class="search-btn">
+				<img class="search-btn-img" src="../img/search-icon.png" alt="A magnifying glass">
+			</button>
+			<button class="cart-button">
+				<img class="cart-button-img" src="../img/shopping-cart-black.png" alt="An image for a shopping cart">
+			</button>
+		</div>
 	</header>
 
 	<!------[Dropdown Search Menu]------>
@@ -51,7 +55,7 @@
 		<aside class="cart-list">
 			<section class="cart-header">
 				<div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div> <!--add JS for this-->
-				<button class="close-button"><img class="close-button-img" src="../../img/close-icon.png" alt="A close button"></button> <!--image here-->
+				<button class="close-button"><img class="close-button-img" src="../img/close-icon.png" alt="A close button"></button> <!--image here-->
 			</section>
 			<section class="cart-all-items">
 				<!--[Shopping Cart Items]-->
@@ -61,7 +65,7 @@
 					<section class="cart-item--details">
 						<section class="name-and-button-wrapper">
 							<div class="name--selected"></div> <!--prod name-->
-							<button class="remove-button"><img class="remove-button-img" src="../../img/trash-can.png" alt="Remove button"></button> <!--image here-->
+							<button class="remove-button"><img class="remove-button-img" src="../img/trash-can.png" alt="Remove button"></button> <!--image here-->
 						</section>
 						<div>Size:&nbsp;<span class="size--selected">S</span></div>
 						<section class="price-and-quantity--cart">
@@ -70,9 +74,9 @@
 						</section>
 							<section class="alter-quantity--cart">
 							<section class="button-wrapper">
-								<button class="quantity-button button-less--cart">-</button>
+								<button class="quantity-button--cart button-less--cart">-</button>
 								<input class="quantity--cart" value="1">
-								<button class="quantity-button button-more--cart">+</button>
+								<button class="quantity-button--cart button-more--cart">+</button>
 							</section>
 							</section>
 						</section>
@@ -89,7 +93,7 @@
 		<!------["Order Placed Pop Up"]------>
 		<div class="modal-backdrop hide-popup--order-placed">
 			<div class="modal-box">
-				<img class="tick-img" src="../../img/green-tick.png" alt="Green Tick">
+				<img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
 				<h3 class="modal-title">Order Placed</h3>
 				<p class="modal-description">
 					Thank you for your purchase. Please come again!
@@ -104,7 +108,7 @@
 	<section class="page-menu--product title-font">
 	<template id="page-menu-template--product">
 		<nav class="website-path website-path--product">
-			<a href="../index.html">Home</a>&nbsp;/
+			<a href="index.html">Home</a>&nbsp;/
 			<a class="category-page--product" href=""></a>&nbsp;/
 			<span class="current-page"></span>
 		</nav>
@@ -156,7 +160,7 @@
 
 	<!------[Pop up]------>
 	<div class="item-added-popup hide-pop-up">
-		Item Added&nbsp;<img class="tick-img" src="../../img/tick.png" alt="Image of a tick">
+		Item Added&nbsp;<img class="tick-img" src="../img/tick.png" alt="Image of a tick">
 	</div>
 
 	<!------[Recommended Items]------>
@@ -177,39 +181,32 @@
 
 	
 
-	<!------[Navigation Bar (Bottom)]------>
-	<footer>
-	<div class="footer-top">
-		<div class="footer-column">
-			<h4>Shop</h4>
-			<a href="women.html">Women</a>
-			<a href="men.html">Men</a>
+    <!------[Navigation Bar (Bottom)]------>
+    <footer>
+    <div class="footer-top">
+        <div class="footer-column">
+            <h4>Shop</h4>
+            <a href="women.html">Women</a>
+            <a href="men.html">Men</a>
+        </div>
+        <div class="footer-column">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+        </div>
+            <div class="footer-column">
+            <h4>Support</h4>
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h4>Got a question?</h4>
+            <p>+6016-417-5751</p>
+            <p>fuku@gmail.com</p>
 		</div>
-		<div class="footer-column">
-			<h4>About</h4>
-			<a href="../about.html">About Us</a>
-		</div>
-		<div class="footer-column">
-			<h4>Support</h4>
-			<a href="#">FAQs</a>
-			<a href="#">Contact Us</a>
-		</div>
-		<div class="footer-column">
-			<h4>Got a question?</h4>
-			<p>+6016-417-5751</p>
-			<p>fuku@gmail.com</p>
-		</div>
-		<div class="footer-column">
-			<h4>Get updates when you sign up.</h4>
-			<p>Receive the latest updates and more.</p>
-			<div class="newsletter">
-				<input type="email" placeholder="Enter your email">
-				<button>Submit</button>
-			</div>
-		</div>
-	</div>
-	<div class="footer-bottom">
+    </div>
+    <div class="footer-bottom">
 		<p>&copy; 2026 Fuku. All rights reserved.</p>
-	</div>
+    </div>
+</footer>
 </body>
 </html>

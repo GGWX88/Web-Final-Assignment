@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register — Fuku</title>
+  <title>Women — Fuku</title>
   <link rel="stylesheet" href="../stylesheet/style.css">
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
     <a href="index.html" class="logo">Fuku</a>
     <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="catalogue.html">Catalogue</a>
+      <a href="catalogue.html" class="active">Catalogue</a>
       <a href="about.html">About</a>
       <a href="review.html">Review</a>
       <a href="login.html">Member</a>
@@ -100,118 +100,55 @@
         </div>
 	<section>
 
-  <section class="form-section">
-    <h2>Create an Account</h2>
-    <p>Join Fuku today and enjoy exclusive fashion collections.</p>
+  <main class="category--women">
+      <a href="./category.html?category=3" class="category-card category-card--women">
+        <img src="../img/Women-Top-Category.webp" alt="Women Top">
+        <span class="category-label">Women Top</span>
+      </a>
 
-    <!-- Progress Bar -->
-    <div class="progress-container">
-      <div class="progress-text">Step <span class="progress-text">1 / 3</span></div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar"></div>
-      </div>
-    </div>
+      <a href="./category.html?category=4" class="category-card category-card--women">
+        <img src="../img/Women-Bottom-Category.webp" alt="Women Bottom">
+        <span class="category-label">Women Bottom</span>
+      </a>
 
-    <!-- Message Box -->
-    <div class="form-msg"></div>
+      <a href="./category.html?category=5" class="category-card category-card--women">
+        <img src="../img/Women-Dress-Category.webp" alt="Women Dress">
+        <span class="category-label">Women Dress</span>
+      </a>
 
-    <!-- Registration Form -->
-    <form>
+      <a href="./category.html?category=6" class="category-card category-card--women">
+        <img src="../img/Women-Skirt-Category.jpeg" alt="Women Skirt">
+        <span class="category-label">Women Skirt</span>
+      </a>
+  </main>
 
-      <!-- STEP 1: PERSONAL INFORMATION -->
-      <div class="step-1">
-        <h3 class="step-title">Step 1: Personal Information</h3>
-
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" placeholder="Enter your full name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="+60..." required>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-next">Next →</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: PASSWORD -->
-      <div class="step-2">
-        <h3 class="step-title">Step 2: Create Password</h3>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Create a password (min 6 characters)" required>
-
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm password" required>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-prev">← Back</button>
-          <button type="button" class="btn-next">Next →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: PREFERENCES & AGREEMENT -->
-      <div class="step-3">
-        <h3 class="step-title">Step 3: Preferences & Agreement</h3>
-
-        <div class="checkbox-group" style="margin-bottom: 20px;">
-          <input type="checkbox" id="agreeTerms" required>
-          <label for="agreeTerms">
-            I have read and agree to the <strong>Terms & Conditions</strong> and <strong>Privacy Policy</strong>
-          </label>
-        </div>
-
-        <div class="checkbox-group">
-          <input type="checkbox" id="newsletter">
-          <label for="newsletter">
-            I want to receive updates, promotions, and fashion tips from Fuku
-          </label>
-        </div>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-prev">← Back</button>
-          <button type="button" class="btn-submit">Complete Registration</button>
-        </div>
-      </div>
-
-      <p class="form-link" style="margin-top: 24px;">
-        Already have an account?
-        <a href="login.html">Login Here</a>
-      </p>
-
-    </form>
-  </section>
-
-  <script src="../js/messages.js"></script>
-  <script src="../js/register.js"></script>
-
-  <footer>
-    <div class="footer-top">
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <a href="catalogue.html">Women</a>
-        <a href="catalogue.html">Men</a>
-      </div>
-      <div class="footer-column">
-        <h4>About</h4>
-        <a href="about.html">About Us</a>
-      </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <a href="#">FAQs</a>
-        <a href="#">Contact Us</a>
-      </div>
-      <div class="footer-column">
-        <h4>Got a question?</h4>
-        <p>+6016-417-5751</p>
-        <p>fuku@gmail.com</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Fuku. All rights reserved.</p>
-    </div>
-  </footer>
+  
+	<!------[Navigation Bar (Bottom)]------>
+	<footer>
+	<div class="footer-top">
+		<div class="footer-column">
+			<h4>Shop</h4>
+			<a href="women.html">Women</a>
+			<a href="men.html">Men</a>
+		</div>
+		<div class="footer-column">
+			<h4>About</h4>
+			<a href="about.html">About Us</a>
+		</div>
+			<div class="footer-column">
+			<h4>Support</h4>
+			<a href="#">FAQs</a>
+			<a href="#">Contact Us</a>
+		</div>
+		<div class="footer-column">
+			<h4>Got a question?</h4>
+			<p>+6016-417-5751</p>
+			<p>fuku@gmail.com</p>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; 2026 Fuku. All rights reserved.</p>
+	</div>
+	</footer>
 </body>
 </html>
