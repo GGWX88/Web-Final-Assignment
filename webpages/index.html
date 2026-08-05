@@ -9,8 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <script src="../js/theme.js"></script>
-  <script src="../js/nav.js"></script>
+  <script defer src="../js/database.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/index.js"></script>
+  <script defer src="../js/theme.js"></script>
+  <script defer src="../js/nav.js"></script>
 </head>
 
 <body>
@@ -23,7 +27,79 @@
       <a href="review.html">Review</a>
       <a href="login.html">Member</a>
     </nav>
+    <div class="header-actions">
+        <button id="search-toggle-btn" class="search-btn">
+            <img class="search-btn-img" src="../img/search-icon.png" alt="A magnifying glass">
+        </button>
+        <button class="cart-button">
+            <img class="cart-button-img" src="../img/shopping-cart-black.png" alt="An image for a shopping cart">
+        </button>
+    </div>
   </header>
+
+	<!------[Dropdown Search Menu]------>
+	<div id="search-dropdown" class="search-dropdown hidden">
+		<div class="search-input-wrapper">
+			<input id="search-input" type="text" placeholder="Search our products..." autocomplete="off" >
+		</div>
+		<div id="search-results" class="search-results">
+		</div>
+	</div>
+
+	<!--[Shopping Cart]-->
+	<section class="shopping-cart">
+		<div class="cart-overlay active"></div>
+
+		<aside class="cart-list">
+			<section class="cart-header">
+				<div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div>
+				<button class="close-button"><img class="close-button-img" src="../img/close-icon.png" alt="A close button"></button>
+			</section>
+			<section class="cart-all-items">
+				<!--[Shopping Cart Items]-->
+				<template id="cart-item-template">
+				<div class="cart-item" data-id=""> 
+					<img class="cart-item--img" src="" alt="">
+					<section class="cart-item--details">
+						<section class="name-and-button-wrapper">
+							<div class="name--selected"></div>
+							<button class="remove-button"><img class="remove-button-img" src="../img/trash-can.png" alt="Remove button"></button>
+						</section>
+						<div>Size:&nbsp;<span class="size--selected">S</span></div>
+						<section class="price-and-quantity--cart">
+						<section class="price-wrapper">
+							<div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div>
+						</section>
+							<section class="alter-quantity--cart">
+							<section class="button-wrapper">
+								<button class="quantity-button--cart button-less--cart">-</button>
+								<input class="quantity--cart" value="1">
+								<button class="quantity-button--cart button-more--cart">+</button>
+							</section>
+							</section>
+						</section>
+					</section>
+				</div>
+				</template>
+			</section>
+			<section class="cart-footer">
+				<div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
+				<button class="checkout-button">Checkout</button>
+			</section>
+		</aside>
+
+        <!------["Order Placed Pop Up"]------>
+        <div class="modal-backdrop hide-popup--order-placed">
+            <div class="modal-box">
+                <img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
+                <h3 class="modal-title">Order Placed</h3>
+                <p class="modal-description">
+                    Thank you for your purchase. Please come again!
+                </p>
+                <button class="modal-button">Continue Shopping</button>
+            </div>
+        </div>
+	<section>
 
   <main>
     <!-- Welcome Page -->
@@ -39,41 +115,30 @@
     
     <!-- Categories -->
     <div class="categories">
-      <a href="catalogue.html" class="category-card">
+      <a href="./women.html" class="category-card">
         <img src="../img/banners/mv_3.jpg" alt="Women">
         <span class="category-label">Women</span>
       </a>
-      <a href="catalogue.html" class="category-card">
+      <a href="./men.html" class="category-card">
         <img src="../img/banners/mv_2.jpg" alt="Men">
         <span class="category-label">Men</span>
       </a>
     </div>
 
     <!-- Featured -->
-    <section class="featured">
-      <h2 class="feat-title">Featured</h2>
-      <div class="product-grid">
-        <a href="catalogue.html" class="product-card">
-          <img src="../img/featured/p1.jpg" alt="Linen Shirt">
-          <h3>Linen Shirt</h3>
-          <p class="price">RM 89</p>
-        </a>
-        <a href="catalogue.html" class="product-card">
-          <img src="../img/featured/p2.jpg" alt="Cotton Tee">
-          <h3>Cotton Tee</h3>
-          <p class="price">RM 49</p>
-        </a>
-        <a href="catalogue.html" class="product-card">
-          <img src="../img/featured/p3.jpg" alt="Wide-Leg Pants">
-          <h3>Wide-Leg Pants</h3>
-          <p class="price">RM 119</p>
-        </a>
-        <a href="catalogue.html" class="product-card">
-          <img src="../img/featured/p4.jpg" alt="Knit Sweater">
-          <h3>Knit Sweater</h3>
-          <p class="price">RM 99</p>
-        </a>
-      </div>
+    <h1 class="feat-title">Featured Products</h1>
+    <section class="catalogue">
+        <template id="card-template">
+            <article class="card">
+                <a class="product-page">
+                    <img class="card-img">
+                </a>
+                <div class="card-info">
+                    <h5 class="card-title"></h5>
+                    <span class="card-price">RM&nbsp;<span class="card-price--value"></span></span>
+                </div>
+            </article>
+        </template>
     </section>
 
     <hr class="section-divider">

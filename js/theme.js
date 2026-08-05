@@ -14,6 +14,8 @@ function loadThemePreference() {
   // If user had dark mode on before, apply it
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
+	document.querySelector(".search-btn-img").src = "../img/search-icon-dark-mode.png"; //WILL BREAK
+	document.querySelector(".cart-button-img").src = "../img/shopping-cart-dark-mode.png"; //WILL BREAK
     updateThemeButton('sun'); // Show sun icon (switch to light)
   } else {
     document.body.classList.remove('dark-mode');
@@ -35,7 +37,12 @@ function setupThemeToggle() {
     // Add it to the header
     let header = document.querySelector('header');
     if (header) {
-      header.appendChild(themeButton);
+
+      //header.appendChild(themeButton);
+		let actionsWrapper = document.querySelector('.header-actions') || header;
+		actionsWrapper.appendChild(themeButton);
+		//
+
     }
   }
 
@@ -52,10 +59,14 @@ function toggleTheme() {
   if (isDarkMode) {
     document.body.classList.remove('dark-mode');
     localStorage.setItem('fuku-theme', 'light');
+	document.querySelector(".search-btn-img").src = "../img/search-icon.png"; //WILL BREAK
+	document.querySelector(".cart-button-img").src = "../img/shopping-cart-black.png"; //WILL BREAK
     updateThemeButton('moon'); // Show moon (to switch to dark)
   } else {
     document.body.classList.add('dark-mode');
     localStorage.setItem('fuku-theme', 'dark');
+	document.querySelector(".search-btn-img").src = "../img/search-icon-dark-mode.png"; //WILL BREAK
+	document.querySelector(".cart-button-img").src = "../img/shopping-cart-dark-mode.png"; //WILL BREAK
     updateThemeButton('sun');
   }
 }

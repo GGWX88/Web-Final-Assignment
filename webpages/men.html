@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men — Fuku</title>
+  <link rel="stylesheet" href="../stylesheet/style.css">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <script defer src="../js/database.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/theme.js"></script>
+  <script defer src="../js/nav.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">Fuku</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="catalogue.html" class="active">Catalogue</a>
+      <a href="about.html">About</a>
+      <a href="review.html">Review</a>
+      <a href="login.html">Member</a>
+    </nav>
+    <div class="header-actions">
+        <button id="search-toggle-btn" class="search-btn">
+            <img class="search-btn-img" src="../img/search-icon.png" alt="A magnifying glass">
+        </button>
+        <button class="cart-button">
+            <img class="cart-button-img" src="../img/shopping-cart-black.png" alt="An image for a shopping cart">
+        </button>
+    </div>
+  </header>
+
+	<!------[Dropdown Search Menu]------>
+	<div id="search-dropdown" class="search-dropdown hidden">
+		<div class="search-input-wrapper">
+			<input id="search-input" type="text" placeholder="Search our products..." autocomplete="off" >
+		</div>
+		<div id="search-results" class="search-results">
+		</div>
+	</div>
+
+	<!--[Shopping Cart]-->
+	<section class="shopping-cart">
+		<div class="cart-overlay active"></div>
+
+		<aside class="cart-list">
+			<section class="cart-header">
+				<div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div>
+				<button class="close-button"><img class="close-button-img" src="../img/close-icon.png" alt="A close button"></button>
+			</section>
+			<section class="cart-all-items">
+				<!--[Shopping Cart Items]-->
+				<template id="cart-item-template">
+				<div class="cart-item" data-id=""> 
+					<img class="cart-item--img" src="" alt="">
+					<section class="cart-item--details">
+						<section class="name-and-button-wrapper">
+							<div class="name--selected"></div>
+							<button class="remove-button"><img class="remove-button-img" src="../img/trash-can.png" alt="Remove button"></button>
+						</section>
+						<div>Size:&nbsp;<span class="size--selected">S</span></div>
+						<section class="price-and-quantity--cart">
+						<section class="price-wrapper">
+							<div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div>
+						</section>
+							<section class="alter-quantity--cart">
+							<section class="button-wrapper">
+								<button class="quantity-button--cart button-less--cart">-</button>
+								<input class="quantity--cart" value="1">
+								<button class="quantity-button--cart button-more--cart">+</button>
+							</section>
+							</section>
+						</section>
+					</section>
+				</div>
+				</template>
+			</section>
+			<section class="cart-footer">
+				<div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
+				<button class="checkout-button">Checkout</button>
+			</section>
+		</aside>
+
+        <!------["Order Placed Pop Up"]------>
+        <div class="modal-backdrop hide-popup--order-placed">
+            <div class="modal-box">
+                <img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
+                <h3 class="modal-title">Order Placed</h3>
+                <p class="modal-description">
+                    Thank you for your purchase. Please come again!
+                </p>
+                <button class="modal-button">Continue Shopping</button>
+            </div>
+        </div>
+	<section>
+
+  <main>
+    <div class="categories">
+      <a href="./category.html?category=0" class="category-card">
+        <img src="../img/Men-Top-Category.webp" alt="Men Top">
+        <span class="category-label">Men Top</span>
+      </a>
+
+      <a href="./category.html?category=1" class="category-card">
+        <img src="../img/Men-Bottom-Category.webp" alt="Men Bottom">
+        <span class="category-label">Men Bottom</span>
+      </a>
+
+      <a href="./category.html?category=2" class="category-card">
+        <img src="../img/Men-Outerwear-Category.webp" alt="Men Outerwear">
+        <span class="category-label">Men Outerwear</span>
+      </a>
+    </div>	
+  </main>
+
+  
+	<!------[Navigation Bar (Bottom)]------>
+	<footer>
+	<div class="footer-top">
+		<div class="footer-column">
+			<h4>Shop</h4>
+			<a href="women.html">Women</a>
+			<a href="men.html">Men</a>
+		</div>
+		<div class="footer-column">
+			<h4>About</h4>
+			<a href="about.html">About Us</a>
+		</div>
+			<div class="footer-column">
+			<h4>Support</h4>
+			<a href="#">FAQs</a>
+			<a href="#">Contact Us</a>
+		</div>
+		<div class="footer-column">
+			<h4>Got a question?</h4>
+			<p>+6016-417-5751</p>
+			<p>fuku@gmail.com</p>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; 2026 Fuku. All rights reserved.</p>
+	</div>
+	</footer>
+</body>
+</html>
