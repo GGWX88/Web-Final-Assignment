@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Gilbert | Fuku</title>
+  <link rel="stylesheet" href="../stylesheet/style.css">
+  <link rel="stylesheet" href="../stylesheet/portfolio.css">
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <script defer src="../js/database.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/theme.js"></script>
+  <script defer src="../js/nav.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">Fuku</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a> 
+      <a href="catalogue.html">Catalogue</a> 
+      <a href="about.html">About</a> 
+      <a href="review.html">Review</a> 
+      <a href="login.html">Member</a> 
+    </nav>
+    <div class="header-actions">
+        <button id="search-toggle-btn" class="search-btn">
+            <img class="search-btn-img" src="../img/search-icon.png" alt="A magnifying glass">
+        </button>
+        <button class="cart-button">
+            <img class="cart-button-img" src="../img/shopping-cart-black.png" alt="An image for a shopping cart">
+        </button>
+    </div>
+  </header>
+
+	<!------[Dropdown Search Menu]------>
+	<div id="search-dropdown" class="search-dropdown hidden">
+		<div class="search-input-wrapper">
+			<input id="search-input" type="text" placeholder="Search our products..." autocomplete="off" >
+		</div>
+		<div id="search-results" class="search-results">
+		</div>
+	</div>
+
+	<!--[Shopping Cart]-->
+	<section class="shopping-cart">
+		<div class="cart-overlay active"></div>
+
+		<aside class="cart-list">
+			<section class="cart-header">
+				<div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div>
+				<button class="close-button"><img class="close-button-img" src="../img/close-icon.png" alt="A close button"></button>
+			</section>
+			<section class="cart-all-items">
+				<!--[Shopping Cart Items]-->
+				<template id="cart-item-template">
+				<div class="cart-item" data-id=""> 
+					<img class="cart-item--img" src="" alt="">
+					<section class="cart-item--details">
+						<section class="name-and-button-wrapper">
+							<div class="name--selected"></div>
+							<button class="remove-button"><img class="remove-button-img" src="../img/trash-can.png" alt="Remove button"></button>
+						</section>
+						<div>Size:&nbsp;<span class="size--selected">S</span></div>
+						<section class="price-and-quantity--cart">
+						<section class="price-wrapper">
+							<div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div>
+						</section>
+							<section class="alter-quantity--cart">
+							<section class="button-wrapper">
+								<button class="quantity-button--cart button-less--cart">-</button>
+								<input class="quantity--cart" value="1">
+								<button class="quantity-button--cart button-more--cart">+</button>
+							</section>
+							</section>
+						</section>
+					</section>
+				</div>
+				</template>
+			</section>
+			<section class="cart-footer">
+				<div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
+				<button class="checkout-button">Checkout</button>
+			</section>
+		</aside>
+
+        <!------["Order Placed Pop Up"]------>
+        <div class="modal-backdrop hide-popup--order-placed">
+            <div class="modal-box">
+                <img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
+                <h3 class="modal-title">Order Placed</h3>
+                <p class="modal-description">
+                    Thank you for your purchase. Please come again!
+                </p>
+                <button class="modal-button">Continue Shopping</button>
+            </div>
+        </div>
+	<section>
+
+<style>
+	.profile-grid--gilbert {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.edu-section {
+		padding: 2% 0 2% 0;
+	}
+	.edu-list {
+		padding-left: 3%;
+	}
+	.edu-bullets {
+		list-style-type: square;
+	}
+	.edu-details {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.edu-duration {
+		font-style: italic;
+		color: gray;
+	}
+	.bar--blue {
+
+	}
+	.bar--green {
+
+	}
+	.bar--red {
+
+	}
+	.bar--yellow {
+
+	}
+	.bar--purple {
+
+	}
+	.bar--orange {
+
+	}
+	.project-link {
+		display: inline-block;
+		text-decoration: none;
+		color: black;
+	}
+</style>
+
+  <main>
+    <div class="profile-grid profile-grid--gilbert">
+      <img src="../img/team/gilbert.jpeg" alt="Gilbert">
+      <div class="bio">
+        <h2>Gilbert Gan Wei Xuan</h2>
+        <p><em>Software Engineering Undergraduate</em></p>
+        <p>Gilbert is an aspiring student leader who is a proactive, meticulous & self-disciplined. He is committed
+to developing leadership abilities and technical skills aimed at positively impacting others. He focuses on building responsive layouts, interactive features, and ensuring smooth user experiences.</p>
+
+		<div class="edu-section">
+			<h3>Education</h3>
+			<ul class="edu-list">
+			<li class="edu-bullets">
+				<span class="edu-details">
+					<span>Bachelor of Software Engineering (Hons), Sunway University</span>
+					<span class="edu-duration">(Sep 2025 - Present)</span>
+				</span>
+			</li>
+			<li class="edu-bullets">
+				<span class="edu-details">
+					<span>Core Programme, 42 Kuala Lumpur</span>
+					<span class="edu-duration">COct 2025 - Jan 2026)</span>
+				</span>
+			</li>
+			<li class="edu-bullets">
+				<span class="edu-details">
+					<span>Australian Matriculation, Sunway College</span>
+					<span class="edu-duration">(Apr 2024 - Mar 2025)</span>
+				</span>
+			</li>
+			<li class="edu-bullets">
+				<span class="edu-details">
+					<span>Sijil Pelajaran Malaysia (SPM), SMK Bandar Utama Damansara (4)</span>
+					<span class="edu-duration">(Jan 2019 - Feb 2024)</span>
+				</span>
+			</li>
+			</ul>
+		</div>
+
+
+        <div class="skills">
+          <h3>Technical Skills</h3>
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="progress">
+              <div class="progress-bar js" style="--level: 70%"><span>40%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="progress">
+              <div class="progress-bar html" style="--level: 65%"><span>67%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 60%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">C</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Java</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">SQL</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Bash</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">ChromaDB</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 40%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Pinecone</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 30%"><span>50%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects">
+			<div class="project-card">
+				<a href="https://github.com/wz-Tan/LoCor_AI" class="project-link">
+				<h4>LoCor_AI</h4>
+				<p>An AI-powered business intelligence platform aimed at assisting SME owners in managing their business</p>
+				</a>
+			</div>
+        <div class="project-card">
+            <h4>Interactive Quiz App</h4>
+            <p>Built a JavaScript-based quiz application with dynamic scoring and animations.</p>
+        </div>
+		</div>
+
+        <a href="files/Gilbert_CV.pdf" download="Gilbert_CV.pdf" class="cv-button">Download CV</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <a href="catalogue.html">Women</a> 
+        <a href="catalogue.html">Men</a> 
+      </div>
+      <div class="footer-column">
+        <h4>About</h4>
+        <a href="about.html">About Us</a> 
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <a href="#">FAQs</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-column">
+        <h4>Got a question?</h4>
+        <p>+6016-417-5751</p>
+        <p>fuku@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fuku. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

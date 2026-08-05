@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register — Fuku</title>
+  <title>Portfolio — Rachael | Fuku</title>
   <link rel="stylesheet" href="../stylesheet/style.css">
+  <link rel="stylesheet" href="../stylesheet/portfolio.css">
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <script defer src="../js/database.js"></script>
   <script defer src="../js/search.js"></script>
@@ -100,92 +100,58 @@
         </div>
 	<section>
 
-  <section class="form-section">
-    <h2>Create an Account</h2>
-    <p>Join Fuku today and enjoy exclusive fashion collections.</p>
+  <main>
+    <div class="profile-grid">
+      <img src="../img/team/rachael.jpg" alt="Rachael">
+      <div class="bio">
+        <h2>Rachael Lace Lim Rue Er</h2>
+        <p><em>Computer Science Student</em></p>
+        <p>Computer Science student with a passion for full-stack development and creating secure, user-friendly applications. Experienced in building authentication systems and multi-step forms. Always eager to learn new technologies and expand my programming expertise.</p>
 
-    <!-- Progress Bar -->
-    <div class="progress-container">
-      <div class="progress-text">Step <span class="progress-text">1 / 3</span></div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar"></div>
+        <h3>Education</h3>
+        <ul>
+          <li>Foundation in Arts, Sunway College — August 2024 to August 2025</li>
+          <li>BSc (Hons) Information Technology (Computer Networking and Security), Sunway University — September 2025 to August 2028</li>
+        </ul>
+
+
+        <div class="skills">
+          <h3>Technical Skills</h3>
+          <div class="skill">
+            <div class="skill-name">HTML & CSS</div>
+            <div class="progress">
+              <div class="progress-bar html" style="--level: 80%"><span>80%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="progress">
+              <div class="progress-bar js" style="--level: 80%"><span>80%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="progress">
+              <div class="progress-bar py" style="--level: 80%"><span>80%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects">
+          <div class="project-card">
+            <h4>Fuku Clothing Store Website</h4>
+            <p>Developed a responsive multi-page e-commerce website with multi-step user registration, login simulation, and customer reviews. Implemented form validation and localStorage persistence.</p>
+          </div>
+          <div class="project-card">
+            <h4>Library Management System (Java)</h4>
+            <p>Built a console-based system using OOP principles to manage books, members, staff, and borrowing records. Strengthened understanding of encapsulation, inheritance, and file I/O handling.</p>
+          </div>
+        </div>
+
+        <a href="files/Rachael_CV.pdf" download="Rachael_CV.pdf" class="cv-button">Download CV</a>
       </div>
     </div>
-
-    <!-- Message Box -->
-    <div class="form-msg"></div>
-
-    <!-- Registration Form -->
-    <form>
-
-      <!-- STEP 1: PERSONAL INFORMATION -->
-      <div class="step-1">
-        <h3 class="step-title">Step 1: Personal Information</h3>
-
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" placeholder="Enter your full name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="+60..." required>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-next">Next →</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: PASSWORD -->
-      <div class="step-2">
-        <h3 class="step-title">Step 2: Create Password</h3>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Create a password (min 6 characters)" required>
-
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm password" required>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-prev">← Back</button>
-          <button type="button" class="btn-next">Next →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: PREFERENCES & AGREEMENT -->
-      <div class="step-3">
-        <h3 class="step-title">Step 3: Preferences & Agreement</h3>
-
-        <div class="checkbox-group" style="margin-bottom: 20px;">
-          <input type="checkbox" id="agreeTerms" required>
-          <label for="agreeTerms">
-            I have read and agree to the <strong>Terms & Conditions</strong> and <strong>Privacy Policy</strong>
-          </label>
-        </div>
-
-        <div class="checkbox-group">
-          <input type="checkbox" id="newsletter">
-          <label for="newsletter">
-            I want to receive updates, promotions, and fashion tips from Fuku
-          </label>
-        </div>
-
-        <div class="form-buttons">
-          <button type="button" class="btn-prev">← Back</button>
-          <button type="button" class="btn-submit">Complete Registration</button>
-        </div>
-      </div>
-
-      <p class="form-link" style="margin-top: 24px;">
-        Already have an account?
-        <a href="login.html">Login Here</a>
-      </p>
-
-    </form>
-  </section>
-
-  <script src="../js/messages.js"></script>
-  <script src="../js/register.js"></script>
+  </main>
 
   <footer>
     <div class="footer-top">
@@ -214,4 +180,5 @@
     </div>
   </footer>
 </body>
+
 </html>
