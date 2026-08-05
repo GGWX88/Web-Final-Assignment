@@ -4,12 +4,23 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
   background: #fff;
   transition: background 0.2s, color 0.2s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 /* ===================== Keyboard Focus (site-wide, WCAG 2.1) ===================== */
@@ -333,6 +344,20 @@ body.dark-mode .nav-toggle .bar {
   opacity: 0.85;
 }
 
+body.dark-mode .product-card h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .product-card .price {
+  color: #b8b8b8;
+}
+
+@media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 /* ===================== Section Divider ===================== */
 .section-divider {
@@ -431,55 +456,6 @@ footer {
   margin-bottom: 8px;
 }
 
-.newsletter {
-  display: flex;
-  margin-top: 12px;
-}
-
-.newsletter input {
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  flex: 1;
-  border-radius: 0;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  background: #4a3b28;
-  color: #fff;
-  border: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-
-.newsletter button:hover {
-  background: #3a2d1e;
-}
-
-.newsletter-msg {
-  font-size: 12px;
-  margin-top: 8px;
-}
-
-.newsletter-msg.success {
-  color: #4a7c23;
-}
-
-.newsletter-msg.error {
-  color: #c0392b;
-}
-
-body.dark-mode .newsletter-msg.success {
-  color: #a3d977;
-}
-
-body.dark-mode .newsletter-msg.error {
-  color: #f5a99a;
-}
-
 .footer-bottom {
   border-top: 1px solid #eee;
   padding: 20px 48px;
@@ -575,6 +551,18 @@ body.dark-mode .newsletter-msg.error {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .review-layout {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 48px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
  
 .review-form input,

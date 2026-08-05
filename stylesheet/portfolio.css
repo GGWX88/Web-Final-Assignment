@@ -34,6 +34,20 @@
       transform: scale(1.05);
     }
 
+    @media (max-width: 720px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 1em;
+        padding: 1.5em;
+      }
+
+      .profile-grid img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
     .bio h2 {
       margin: 0;
       font-size: 2rem;

@@ -25,7 +25,7 @@ function setupRegistrationForm() {
 
 // ===== FUNCTION 2: SHOW SPECIFIC STEP =====
 function showStep(stepNumber) {
-  let allSteps = document.querySelectorAll('[class*="step-"]');
+  let allSteps = document.querySelectorAll('.step-1, .step-2, .step-3');
   allSteps.forEach(function(step) {
     step.style.display = 'none';
   });
