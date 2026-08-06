@@ -25,98 +25,89 @@
       <a href="about.html">About</a>
       <a href="review.html">Review</a>
       <a href="login.html">Member</a>
-      <a href="teampage.html">Team</a>
     </nav>
     <div class="header-actions">
-        <button id="search-toggle-btn" class="search-btn">
-            <img class="search-btn-img" src="../img/search-icon.png" alt="A magnifying glass">
-        </button>
-        <button class="cart-button">
-            <img class="cart-button-img" src="../img/shopping-cart-black.png" alt="An image for a shopping cart">
-        </button>
+      <button id="search-toggle-btn" class="search-btn">
+        <img class="search-btn-img" src="../img/search-icon.png" alt="A magnifying glass">
+      </button>
+      <button class="cart-button">
+        <img class="cart-button-img" src="../img/shopping-cart-black.png" alt="An image for a shopping cart">
+      </button>
     </div>
   </header>
 
-	<!------[Dropdown Search Menu]------>
-	<div id="search-dropdown" class="search-dropdown hidden">
-		<div class="search-input-wrapper">
-			<input id="search-input" type="text" placeholder="Search our products..." autocomplete="off" >
-		</div>
-		<div id="search-results" class="search-results">
-		</div>
-	</div>
+  <!-- Dropdown Search Menu -->
+  <div id="search-dropdown" class="search-dropdown hidden">
+    <div class="search-input-wrapper">
+      <input id="search-input" type="text" placeholder="Search our products..." autocomplete="off">
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </div>
 
-	<!--[Shopping Cart]-->
-	<section class="shopping-cart">
-		<div class="cart-overlay active"></div>
+  <!-- Shopping Cart -->
+  <section class="shopping-cart">
+    <div class="cart-overlay active"></div>
+    <aside class="cart-list">
+      <section class="cart-header">
+        <div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div>
+        <button class="close-button"><img class="close-button-img" src="../img/close-icon.png" alt="A close button"></button>
+      </section>
+      <section class="cart-all-items">
+        <template id="cart-item-template">
+          <div class="cart-item" data-id="">
+            <img class="cart-item--img" src="" alt="">
+            <section class="cart-item--details">
+              <section class="name-and-button-wrapper">
+                <div class="name--selected"></div>
+                <button class="remove-button"><img class="remove-button-img" src="../img/trash-can.png" alt="Remove button"></button>
+              </section>
+              <div>Size:&nbsp;<span class="size--selected">S</span></div>
+              <section class="price-and-quantity--cart">
+                <section class="price-wrapper">
+                  <div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div>
+                </section>
+                <section class="alter-quantity--cart">
+                  <section class="button-wrapper">
+                    <button class="quantity-button--cart button-less--cart">-</button>
+                    <input class="quantity--cart" value="1">
+                    <button class="quantity-button--cart button-more--cart">+</button>
+                  </section>
+                </section>
+              </section>
+            </section>
+          </div>
+        </template>
+      </section>
+      <section class="cart-footer">
+        <div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
+        <button class="checkout-button">Checkout</button>
+      </section>
+    </aside>
 
-		<aside class="cart-list">
-			<section class="cart-header">
-				<div class="cart-title sub-font">Cart (<span class="number-of-cart-items">0</span>)</div>
-				<button class="close-button"><img class="close-button-img" src="../img/close-icon.png" alt="A close button"></button>
-			</section>
-			<section class="cart-all-items">
-				<!--[Shopping Cart Items]-->
-				<template id="cart-item-template">
-				<div class="cart-item" data-id=""> 
-					<img class="cart-item--img" src="" alt="">
-					<section class="cart-item--details">
-						<section class="name-and-button-wrapper">
-							<div class="name--selected"></div>
-							<button class="remove-button"><img class="remove-button-img" src="../img/trash-can.png" alt="Remove button"></button>
-						</section>
-						<div>Size:&nbsp;<span class="size--selected">S</span></div>
-						<section class="price-and-quantity--cart">
-						<section class="price-wrapper">
-							<div class="price--selected">Price:&nbsp;RM&nbsp;<span class="price-total--selected"></span></div>
-						</section>
-							<section class="alter-quantity--cart">
-							<section class="button-wrapper">
-								<button class="quantity-button--cart button-less--cart">-</button>
-								<input class="quantity--cart" value="1">
-								<button class="quantity-button--cart button-more--cart">+</button>
-							</section>
-							</section>
-						</section>
-					</section>
-				</div>
-				</template>
-			</section>
-			<section class="cart-footer">
-				<div class="subtotal sub-font">SUBTOTAL:<span class="subtotal-amount">RM&nbsp;<span class="subtotal-value">0.00</span></span></div>
-				<button class="checkout-button">Checkout</button>
-			</section>
-		</aside>
-
-        <!------["Order Placed Pop Up"]------>
-        <div class="modal-backdrop hide-popup--order-placed">
-            <div class="modal-box">
-                <img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
-                <h3 class="modal-title">Order Placed</h3>
-                <p class="modal-description">
-                    Thank you for your purchase. Please come again!
-                </p>
-                <button class="modal-button">Continue Shopping</button>
-            </div>
-        </div>
-	<section>
+    <!-- Order Placed Pop Up -->
+    <div class="modal-backdrop hide-popup--order-placed">
+      <div class="modal-box">
+        <img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
+        <h3 class="modal-title">Order Placed</h3>
+        <p class="modal-description">Thank you for your purchase. Please come again!</p>
+        <button class="modal-button">Continue Shopping</button>
+      </div>
+    </div>
+  </section>
 
   <main>
     <div class="profile-grid">
-      <img src="../img/team/derrick.jpg" alt="Derrick">
+      <img src="../img/team/derrick.png" alt="Derrick">
       <div class="bio">
         <h2>Derrick Tok Wei Kean</h2>
         <p><em>Developer & Designer</em></p>
-        <p>Derrick specializes in front-end development and creative design. He focuses on building responsive layouts,
-          interactive features, and ensuring smooth user experiences.</p>
+        <p>Derrick specializes in front-end development and creative design. He focuses on building responsive layouts, interactive features, and ensuring smooth user experiences.</p>
 
         <h3>Education</h3>
         <ul>
           <li>Foundation in Arts, Sunway College — Completed in 2025 (CGPA: 3.75)</li>
-          <li>BSc (Hons) Information Technology (Computer Networking and Security), Sunway University — Current CGPA:
-            3.69</li>
+          <li>BSc (Hons) Information Technology (Computer Networking and Security), Sunway University — Current CGPA: 3.69</li>
         </ul>
-
 
         <div class="skills">
           <h3>Technical Skills</h3>
@@ -135,7 +126,19 @@
           <div class="skill">
             <div class="skill-name">Python</div>
             <div class="progress">
-              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+              <div class="progress-bar py" style="--level: 60%"><span>60%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Java</div>
+            <div class="progress">
+              <div class="progress-bar java" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">SQL</div>
+            <div class="progress">
+              <div class="progress-bar sql" style="--level: 75%"><span>75%</span></div>
             </div>
           </div>
         </div>
@@ -183,5 +186,4 @@
     </div>
   </footer>
 </body>
-
 </html>
