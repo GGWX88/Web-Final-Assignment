@@ -87,36 +87,31 @@ function setupFormSubmission() {
 
     // CHECK 1: Did user enter a name?
     if (name === '') {
-      messageBox.textContent = '❌ Please enter your name.';
-      messageBox.style.color = '#ef4444';
+      showFormMessage(messageBox, 'Please enter your name.', 'error');
       return;
     }
 
     // CHECK 2: Did user enter an email?
     if (email === '') {
-      messageBox.textContent = '❌ Please enter your email.';
-      messageBox.style.color = '#ef4444';
+      showFormMessage(messageBox, 'Please enter your email.', 'error');
       return;
     }
 
     // CHECK 3: Did user enter a phone number?
     if (phone === '') {
-      messageBox.textContent = 'Please enter your phone number.';
-      messageBox.style.color = '#ef4444';
+      showFormMessage(messageBox, 'Please enter your phone number.', 'error');
       return;
     }
 
     // CHECK 4: Did user select a rating?
     if (rating === 0) {
-      messageBox.textContent = 'Please select a rating (1-5 stars).';
-      messageBox.style.color = '#ef4444';
+      showFormMessage(messageBox, 'Please select a rating (1-5 stars).', 'error');
       return;
     }
 
     // CHECK 5: Did user write a review?
     if (reviewText === '') {
-      messageBox.textContent = 'Please write a review.';
-      messageBox.style.color = '#ef4444';
+      showFormMessage(messageBox, 'Please write a review.', 'error');
       return;
     }
 
@@ -129,8 +124,7 @@ function setupFormSubmission() {
     }
 
     if (emailAlreadyUsed) {
-      messageBox.textContent = 'A review from this email already exists.';
-      messageBox.style.color = '#f59e0b';
+      showFormMessage(messageBox, 'A review from this email already exists.', 'warning');
       return;
     }
 
@@ -148,15 +142,14 @@ function setupFormSubmission() {
 
     saveReviewsToMemory();
 
-    messageBox.textContent = 'Thank you! Your review has been posted.';
-    messageBox.style.color = '#4ade80';
+    showFormMessage(messageBox, 'Thank you! Your review has been posted.', 'success');
 
     clearTheForm();
 
     displayAllReviews();
 
     setTimeout(function() {
-      messageBox.textContent = '';
+      hideFormMessage(messageBox);
     }, 3000);
   });
 }
