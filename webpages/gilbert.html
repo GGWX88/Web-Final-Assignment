@@ -16,7 +16,7 @@
   <script defer src="../js/nav.js"></script>
 </head>
 
-<body>
+<body id="gilberts-portfolio">
   <header>
     <a href="index.html" class="logo">Fuku</a>
     <nav class="main-nav">
@@ -87,7 +87,7 @@
 			</section>
 		</aside>
 
-        <!------["Order Placed Pop Up"]------>
+        <!------["Order Placed" Pop Up]------>
         <div class="modal-backdrop hide-popup--order-placed">
             <div class="modal-box">
                 <img class="tick-img" src="../img/green-tick.png" alt="Green Tick">
@@ -100,65 +100,20 @@
         </div>
 	<section>
 
-<style>
-	.profile-grid--gilbert {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.edu-section {
-		padding: 2% 0 2% 0;
-	}
-	.edu-list {
-		padding-left: 3%;
-	}
-	.edu-bullets {
-		list-style-type: square;
-	}
-	.edu-details {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	.edu-duration {
-		font-style: italic;
-		color: gray;
-	}
-	.bar--blue {
-
-	}
-	.bar--green {
-
-	}
-	.bar--red {
-
-	}
-	.bar--yellow {
-
-	}
-	.bar--purple {
-
-	}
-	.bar--orange {
-
-	}
-	.project-link {
-		display: inline-block;
-		text-decoration: none;
-		color: black;
-	}
-</style>
-
   <main>
     <div class="profile-grid profile-grid--gilbert">
-      <img src="../img/team/gilbert.jpeg" alt="Gilbert">
+      <img src="../img/team/gilbert-1.jpg" alt="Gilbert">
       <div class="bio">
-        <h2>Gilbert Gan Wei Xuan</h2>
-        <p><em>Software Engineering Undergraduate</em></p>
-        <p>Gilbert is an aspiring student leader who is a proactive, meticulous & self-disciplined. He is committed
-to developing leadership abilities and technical skills aimed at positively impacting others. He focuses on building responsive layouts, interactive features, and ensuring smooth user experiences.</p>
+		<section class="member-headings">
+			<h2 class="member-name">Gilbert Gan Wei Xuan</h2>
+			<p class="member-student-title"><em>Software Engineering Undergraduate</em></p>
+		</section>
+			<h3>Description</h3>
+		<section class="member-information">
+			<p class="member-description"><strong>Gilbert is an aspiring student leader</strong> who is a proactive, meticulous & self-disciplined. He is committed to developing leadership abilities aimed at positively impacting others, and technical skills with a priority on building responsive layouts, interactive features, and ensuring smooth user experiences.</p>
+		</section>
 
-		<div class="edu-section">
+		<section class="edu-section">
 			<h3>Education</h3>
 			<ul class="edu-list">
 			<li class="edu-bullets">
@@ -170,7 +125,7 @@ to developing leadership abilities and technical skills aimed at positively impa
 			<li class="edu-bullets">
 				<span class="edu-details">
 					<span>Core Programme, 42 Kuala Lumpur</span>
-					<span class="edu-duration">COct 2025 - Jan 2026)</span>
+					<span class="edu-duration">(Oct 2025 - Jan 2026)</span>
 				</span>
 			</li>
 			<li class="edu-bullets">
@@ -186,87 +141,98 @@ to developing leadership abilities and technical skills aimed at positively impa
 				</span>
 			</li>
 			</ul>
-		</div>
+		</section>
 
 
-        <div class="skills">
+        <div class="skills skills--gilbert">
           <h3>Technical Skills</h3>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">JavaScript</div>
-            <div class="progress">
-              <div class="progress-bar js" style="--level: 70%"><span>40%</span></div>
+            <div class="progress ">
+              <div class="progress-bar bar--dark-orange" style="--level: 70%"><span>40%</span></div>
             </div>
           </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">HTML</div>
-            <div class="progress">
-              <div class="progress-bar html" style="--level: 65%"><span>67%</span></div>
+            <div class="progress ">
+              <div class="progress-bar bar--dark-orange" style="--level: 65%"><span>67%</span></div>
             </div>
           </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">CSS</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 60%"><span>50%</span></div>
+            <div class="progress ">
+              <div class="progress-bar py bar--dark-orange" style="--level: 60%"><span>50%</span></div>
             </div>
           </div>
-          <div class="skill">
-            <div class="skill-name">Python</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-name">C</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
-            </div>
-          </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">Java</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            <div class="progress ">
+              <div class="progress-bar py bar--orange" style="--level: 55%"><span>50%</span></div>
             </div>
           </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
+            <div class="skill-name">C</div>
+            <div class="progress ">
+              <div class="progress-bar py bar--orange" style="--level: 53%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill skill--gilbert">
+            <div class="skill-name">Python</div>
+            <div class="progress ">
+              <div class="progress-bar bar--orange" style="--level: 50%"><span>50%</span></div>
+            </div>
+          </div>
+          <div class="skill skill--gilbert">
             <div class="skill-name">SQL</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            <div class="progress ">
+              <div class="progress-bar py bar--orange" style="--level: 45%"><span>50%</span></div>
             </div>
           </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">Bash</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 50%"><span>50%</span></div>
+            <div class="progress ">
+              <div class="progress-bar py bar--orange" style="--level: 40%"><span>50%</span></div>
             </div>
           </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">ChromaDB</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 40%"><span>50%</span></div>
+            <div class="progress ">
+              <div class="progress-bar py bar--dark-green" style="--level: 40%"><span>50%</span></div>
             </div>
           </div>
-          <div class="skill">
+          <div class="skill skill--gilbert">
             <div class="skill-name">Pinecone</div>
-            <div class="progress">
-              <div class="progress-bar py" style="--level: 30%"><span>50%</span></div>
+            <div class="progress ">
+              <div class="progress-bar py bar--dark-green" style="--level: 30%"><span>50%</span></div>
             </div>
           </div>
         </div>
 
-        <div class="projects">
-			<div class="project-card">
-				<a href="https://github.com/wz-Tan/LoCor_AI" class="project-link">
+		<section class="project-section">
+		<h3>Projects</h3>
+        <div class="projects projects--gilbert">
+			<div class="project-card project-card--gilbert">
+				<a class="project-link" href="https://github.com/wz-Tan/LoCor_AI">
 				<h4>LoCor_AI</h4>
-				<p>An AI-powered business intelligence platform aimed at assisting SME owners in managing their business</p>
+				<p>An AI-powered business intelligence platform aimed at assisting SME owners in managing their business.</p>
 				</a>
 			</div>
-        <div class="project-card">
-            <h4>Interactive Quiz App</h4>
-            <p>Built a JavaScript-based quiz application with dynamic scoring and animations.</p>
-        </div>
+			<div class="project-card project-card--gilbert">
+				<h4>Fuku Clothing Website</h4>
+				<p>A fully-responsive e-commerce platform designed with product search and add-to-cart capabilities.</p>
+			</div>
+			<div class="project-card project-card--gilbert">
+				<h4>Student Grades Management System</h4>
+				<p>A simple Python-based program allowing lecturers to track a student's course, grades, and auto-generates a report card upon request.</p>
+			</div>
+			<div class="project-card project-card--gilbert">
+				<h4>Wikipedia Web Scraper</h4>
+				<p>A personal project that allows users to obtain information from any Wikipedia site. Provides information retrieval via API or HTML scraping.</p>
+			</div>
 		</div>
+		</section>
 
-        <a href="files/Gilbert_CV.pdf" download="Gilbert_CV.pdf" class="cv-button">Download CV</a>
+        <a href="../CVs/Gilbert_CV.pdf" download="Gilbert_CV.pdf" class="cv-button">Download CV</a>
       </div>
     </div>
   </main>
