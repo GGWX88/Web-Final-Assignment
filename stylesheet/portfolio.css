@@ -124,6 +124,14 @@
       background: #3498db;
     }
 
+    .progress-bar.java {
+      background: #c0392b;
+    }
+
+    .progress-bar.sql {
+      background: #16a085;
+    }
+
     .progress-bar {
       --level: 0%;
     }
