@@ -15,44 +15,46 @@ toggleBtn.addEventListener("click", () => {
 	}
 });
 
-// Allow Search Menu to be closed when clicking anywhere outside of it
+// Add event listener to the webpage
 document.addEventListener("click", (event) => {
   const isClickInsideDropdown = searchDropdown.contains(event.target);
   const isClickOnToggleBtn = toggleBtn.contains(event.target);
 
-  // If the click happened OUTSIDE both the button and the dropdown menu
+  // close dropdown menu user clicks outside the menu
   if (!isClickInsideDropdown && !isClickOnToggleBtn) {
     searchDropdown.classList.add("hidden");
   }
 });
 
-// Filter product as you type
+// Filter products as you type
 searchInput.addEventListener("input", (inputEvent) => {
 	const query = inputEvent.target.value.trim().toLowerCase();
 	renderResults(query);
 });
 
 // Load relevant products
-function renderResults(query) {
-	// Clear existing elements
+function renderResults(query)
+{
+	// Clear existing products
 	searchResults.innerHTML = ""; 
 
-	// Notifies you that input is empty
-	if (query === "") {
+	// Displays when input is empty
+	if (query === "")
+	{
 		searchResults.innerHTML = `<div class="no-results">Type to search products...</div>`;
 		return;
 	}
 
 	let matchesFound = 0;
 
-	// Go through all productCategories
+	// Go through all categories
 	productCategories.forEach((categoryArray, categoryIndex) => {
 		
-		// Go through each individual product
+		// Go through each product within the category
 		categoryArray.forEach((product, itemIndex) => {
-
 			// Checks if product name matches the search query, not case-sensitive
-			if (product.name.toLowerCase().includes(query)) {
+			if (product.name.toLowerCase().includes(query))
+			{
 				matchesFound++;
 
 				// Load product details and the link to the product page
@@ -74,7 +76,8 @@ function renderResults(query) {
 	});
 
 	// If no matches found
-	if (matchesFound === 0) {
+	if (matchesFound === 0)
+	{
 		searchResults.innerHTML = `<div class="no-results">No products found</div>`;
 	}
 }
