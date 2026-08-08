@@ -166,6 +166,14 @@
       transform: translateY(-5px);
     }
 
+	.project-link {
+		text-decoration: none;
+
+		h4 {
+			color: black;
+		}
+	}
+
     .cv-button {
       display: inline-block;
       margin-top: 1.5em;

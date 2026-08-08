@@ -11,9 +11,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<script defer src="../js/database.js"></script>
-	<script defer src="../js/category.js"></script>
 	<script defer src="../js/search.js"></script>
 	<script defer src="../js/cart.js"></script>
+	<script defer src="../js/category.js"></script>
 	<script defer src="../js/theme.js"></script>
 	<script defer src="../js/nav.js"></script>
 </head>
@@ -113,6 +113,20 @@
 			<p class="page-name"></p>
 		</template>
 	</section>
+
+
+	<!------[Filter]------>
+	<div class="filter-container">
+		<label for="sort-select">Sort By:</label>
+		<select id="sort-select">
+			<option value="default">Default</option>
+			<option value="price-low-high">Price: Low to High</option>
+			<option value="price-high-low">Price: High to Low</option>
+			<option value="name-a-z">Alphabetical: A to Z</option>
+			<option value="name-z-a">Alphabetical: Z to A</option>
+		</select>
+	</div>
+
 
 
 	<!------[Catalogue]------>
