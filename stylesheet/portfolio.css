@@ -242,151 +242,186 @@
       }
     }
 
-/* Custom Styling*/
-body#gilberts-portfolio {
-	background-color: #e0e0e0;
+    /* Custom Styling */
+    body#gilberts-portfolio {
+      background-color: #e0e0e0;
+    }
 
-	.profile-grid--gilbert {
-		width: 70%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0;
-	}
-	.member-information,
-	.member-headings {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.member-headings {
-		margin: 0 0 2em 0;
-	}
-	.member-name {
-		text-align: center;
-		margin-top: 0.2em !important;
-	}
-	.member-student-title {
-		font-size: 18px;
-		color: grey !important;
-		text-align: center;
-		margin-top: 0 !important;
-	}
-	.member-description {
-		font-size: 18px;
-		display: inline-block;
-		width: 97.5%;
-		margin-top: 0 !important;
-		margin-bottom: 0.7em !important;
-	}
-	.edu-section,
-	.skills--gilbert,
-	.project--section {
-		margin-top: 0;
-		padding: 2% 0 2% 0;
-	}
-	.edu-section {
-		width: 98%;
-	}
-	.edu-list {
-		padding-left: 3%;
-	}
-	.edu-bullets {
-		list-style-type: square;
-	}
-	.edu-details {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	.edu-duration {
-		font-style: italic;
-		text-align: right;
-		color: gray;
-	}
-	.skill--gilbert {
-		width: 97%;
-		margin: 0 auto;
-		padding-bottom: 1%;
-	}
-	.bar--dark-orange {
-		background: #C85A17 !important;
-	}
-	.bar--orange {
-		background: #E6A100 !important;
-	}
-	.bar--dark-green {
-		background: #1B7A57 !important;
-	}
-	.project-link {
-		display: inline-block;
-		text-decoration: none;
-		color: black;
-	}
-	.project-section {
-		display: flex;
-		flex-direction: column;
-		padding: 2% 0 0 0;
-	}
-	.projects--gilbert {
-		margin-top: 0.5em;
-	}
-}
+    body#gilberts-portfolio .profile-grid--gilbert {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
 
-@media (max-width: 720px) {
-	body#gilberts-portfolio {
+    body#gilberts-portfolio .member-information,
+    body#gilberts-portfolio .member-headings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-		.profile-grid--gilbert {
-			width: 100%;
-			margin: 0;
-		}
-		.edu-details {
-			display: flex;
-			flex-direction: column;
-		}
-		.edu-duration {
-			text-align: left;
-		}
-		.projects--gilbert {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 0.5em;
-		}
-		.member-headings {
-			margin-bottom: 1.5em;
-		}
-		.member-information {
-			padding-top: 0;
-			padding-bottom: 0.8em;
-		}
-		.member-description {
-			width: 100%;
-		}
-		.edu-section,
-		.skills--gilbert,
-		.project-section {
-			padding-top: 0;
-			padding-bottom: 1.5em;
-		}
-		.edu-list {
-			width: 95%;
-			margin: 0 auto;
-		}
-		.cv-button {
-			margin-top: 0;
-			margin-bottom: 1em;
-		}
-	}
-}
+    body#gilberts-portfolio .member-headings {
+      margin: 0 0 2em 0;
+    }
 
-body.dark-mode#gilberts-portfolio {
-	background-color: #555555;
+    body#gilberts-portfolio .member-name {
+      text-align: center;
+      margin-top: 0.2em !important;
+    }
 
-	h3 {
-		color: rgb(232, 211, 175) !important;
-	}
-	.edu-duration{
-		color: #999999;
-	}
-}
+    body#gilberts-portfolio .member-student-title {
+      font-size: 18px;
+      color: grey !important;
+      text-align: center;
+      margin-top: 0 !important;
+    }
+
+    body#gilberts-portfolio .member-description {
+      font-size: 18px;
+      display: inline-block;
+      width: 97.5%;
+      margin-top: 0 !important;
+      margin-bottom: 0.7em !important;
+    }
+
+    body#gilberts-portfolio .skill--gilbert {
+      width: 97%;
+      margin: 0 auto;
+      padding-bottom: 1%;
+    }
+
+    /* Color classes */
+    body#gilberts-portfolio .bar--dark-orange {
+      background: #C85A17 !important;
+    }
+
+    body#gilberts-portfolio .bar--orange {
+      background: #E6A100 !important;
+    }
+
+    body#gilberts-portfolio .bar--dark-green {
+      background: #1B7A57 !important;
+    }
+
+    /* Gilbert's skill levels */
+    body#gilberts-portfolio .progress-bar.javascript {
+      --level: 70%;
+    }
+
+    body#gilberts-portfolio .progress-bar.html {
+      --level: 65%;
+    }
+
+    body#gilberts-portfolio .progress-bar.css {
+      --level: 60%;
+    }
+
+    body#gilberts-portfolio .progress-bar.java {
+      --level: 55%;
+    }
+
+    body#gilberts-portfolio .progress-bar.c {
+      --level: 53%;
+    }
+
+    body#gilberts-portfolio .progress-bar.python {
+      --level: 50%;
+    }
+
+    body#gilberts-portfolio .progress-bar.sql {
+      --level: 45%;
+    }
+
+    body#gilberts-portfolio .progress-bar.bash {
+      --level: 40%;
+    }
+
+    body#gilberts-portfolio .progress-bar.chromadb {
+      --level: 40%;
+    }
+
+    body#gilberts-portfolio .progress-bar.pinecone {
+      --level: 30%;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      body#gilberts-portfolio .profile-grid--gilbert {
+        width: 100%;
+        margin: 0;
+      }
+
+      body#gilberts-portfolio .edu-details {
+        flex-direction: column;
+      }
+
+      body#gilberts-portfolio .edu-duration {
+        text-align: left;
+      }
+    }
+
+
+    /* Derrick's skill levels */
+    body#derrick-portfolio .progress-bar.html {
+      --level: 67%;
+    }
+
+    body#derrick-portfolio .progress-bar.js {
+      --level: 40%;
+    }
+
+    body#derrick-portfolio .progress-bar.py {
+      --level: 60%;
+    }
+
+    body#derrick-portfolio .progress-bar.java {
+      --level: 50%;
+    }
+
+    body#derrick-portfolio .progress-bar.sql {
+      --level: 75%;
+    }
+
+    /* Rachael's skill levels */
+    body#rachael-portfolio .progress-bar.html {
+      --level: 80%;
+    }
+
+    body#rachael-portfolio .progress-bar.js {
+      --level: 80%;
+    }
+
+    body#rachael-portfolio .progress-bar.py {
+      --level: 80%;
+    }
+
+    body#rachael-portfolio .progress-bar.java {
+      --level: 50%;
+    }
+
+    body#rachael-portfolio .progress-bar.sql {
+      --level: 65%;
+    }
+
+    /* Jack/Teoh's skill levels */
+    body#jack-portfolio .progress-bar.html {
+      --level: 69%;
+    }
+
+    body#jack-portfolio .progress-bar.js {
+      --level: 50%;
+    }
+
+    body#jack-portfolio .progress-bar.py {
+      --level: 60%;
+    }
+
+    body#jack-portfolio .progress-bar.java {
+      --level: 45%;
+    }
+
+    body#jack-portfolio .progress-bar.sql {
+      --level: 40%;
+    }
