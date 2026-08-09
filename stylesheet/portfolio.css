@@ -313,6 +313,11 @@
       background: #1B7A57 !important;
     }
 
+    /* Subtle prompt on the clickable project card */
+    body#gilberts-portfolio .click-here {
+      color: grey;
+    }
+
     /* Gilbert's skill levels */
     body#gilberts-portfolio .progress-bar.javascript {
       --level: 70%;

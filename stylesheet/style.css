@@ -952,6 +952,11 @@ form button:hover{
     font-size:14px;
 }
 
+/* Slightly larger gap when the link follows the final form step */
+.form-link--spaced{
+    margin-top:24px;
+}
+
 .form-link a{
     color:#4a3b28;
     text-decoration:none;
@@ -968,6 +973,11 @@ form button:hover{
     gap: 8px;
     margin-top: 12px;
     font-size: 14px;
+}
+
+/* Extra gap below the terms checkbox so it separates from the newsletter one */
+.checkbox-group--spaced {
+    margin-bottom: 20px;
 }
 
 .checkbox-group label{
@@ -1343,6 +1353,35 @@ body.dark-mode .aboutbanner-description {
 
 body.dark-mode .team-grid img {
   background: #2d2d2d;
+}
+
+/* Role and contribution details shown under each team member */
+.about-list .member-role {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a3b28;
+  margin-top: 4px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.about-list .member-contrib {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6b5c47;
+  margin-top: 6px;
+  text-align: left;
+}
+
+body.dark-mode .about-list .member-role {
+  color: #e8d3af;
+}
+
+body.dark-mode .about-list .member-contrib {
+  color: #b8b8b8;
 }
 
 /* make the whole card clickable while keeping the card styling */
