@@ -237,6 +237,7 @@
     @media print {
 
       header,
+      footer,
       .cv-button {
         display: none;
       }
@@ -263,6 +264,10 @@
       gap: 0;
     }
 
+    body#gilberts-portfolio .profile-grid--gilbert h3 {
+      padding-bottom: 0.3em;
+    }
+
     body#gilberts-portfolio .member-information,
     body#gilberts-portfolio .member-headings {
       display: flex;
@@ -280,10 +285,10 @@
     }
 
     body#gilberts-portfolio .member-student-title {
-      font-size: 18px;
-      color: grey !important;
-      text-align: center;
-      margin-top: 0 !important;
+	  font-size: 18px;
+	  color: grey !important;
+	  text-align: center;
+	  margin-top: 0 !important;
     }
 
     body#gilberts-portfolio .member-description {
@@ -294,11 +299,41 @@
       margin-bottom: 0.7em !important;
     }
 
+    body#gilberts-portfolio .edu-section {
+		margin-top: 0.5em;
+	}
+
+    body#gilberts-portfolio .edu-section h3 {
+		padding-bottom: 0.3em;
+	}
+
+	body#gilberts-portfolio .edu-list {
+		padding: 0 24px;
+	}
+
+	body#gilberts-portfolio .edu-details {
+		font-size: 18px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	body#gilberts-portfolio .edu-duration {
+		color: #a0a0a0;
+	}
+
+    body#gilberts-portfolio .skills--gilbert h3 {
+		padding-bottom: 0.3em;
+	}
+
     body#gilberts-portfolio .skill--gilbert {
-      width: 97%;
-      margin: 0 auto;
-      padding-bottom: 1%;
+		width: 97%;
+		margin: 0 auto;
+		padding-bottom: 1.5%;
     }
+
+	body#gilberts-portfolio .click-here {
+		color: grey;
+	}
 
     /* Color classes */
     body#gilberts-portfolio .bar--dark-orange {
@@ -354,6 +389,30 @@
       --level: 30%;
     }
 
+	body#gilberts-portfolio .project-section {
+		margin-top: 0.9em;
+	}
+
+	body#gilberts-portfolio .project-card--gilbert p {
+		font-size: 17px;
+	}
+
+    body#gilberts-portfolio .projects {
+		margin-top: 0.3em;
+	}
+
+	body.dark-mode#gilberts-portfolio {
+		background-color: #404040;
+	}
+
+    body.dark-mode#gilberts-portfolio h3 {
+		color: rgb(232, 211, 175);
+	}
+
+    body.dark-mode#gilberts-portfolio .edu-details {
+		color: rgb(204, 204, 204) !important;
+	}
+
     /* Responsive */
     @media (max-width: 720px) {
       body#gilberts-portfolio .profile-grid--gilbert {
@@ -363,10 +422,15 @@
 
       body#gilberts-portfolio .edu-details {
         flex-direction: column;
+		align-items: flex-start;
       }
 
-      body#gilberts-portfolio .edu-duration {
-        text-align: left;
+      body#gilberts-portfolio .project-section {
+		margin-top: 1.5em;
+      }
+
+      body#gilberts-portfolio .projects--gilbert {
+		flex-direction: column;
       }
     }
 
